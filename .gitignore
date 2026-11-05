@@ -1,0 +1,33 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and generated files
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+.wrangler/
+*.log
+*.tsbuildinfo
+.DS_Store
+._*
+*.tar.gz
+*.zip
+
+# Uploaded material, model conversations and student records stay local.
+/projects/**
+!/projects/abstract-algebra/
+!/projects/abstract-algebra/input/
+!/projects/abstract-algebra/input/sample_abstract_algebra.md
+/patch-backups/
+/acceptance-*/
+/deploy-package/

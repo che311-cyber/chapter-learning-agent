@@ -1,0 +1,255 @@
+{
+ "schema_version": 1,
+ "diagram_type": "architecture",
+ "meta": {
+  "title": "Chapter Learning Agent · 系统架构",
+  "locale": "zh-CN",
+  "quality_profile": "showcase",
+  "animation": "trace",
+  "viewBox": [
+   1300,
+   700
+  ]
+ },
+ "layout": {
+  "mode": "grid",
+  "origin": [
+   50,
+   60
+  ],
+  "cols": 4,
+  "gapX": 55,
+  "gapY": 100,
+  "cellW": 260,
+  "cellH": 96
+ },
+ "components": [
+  {
+   "id": "teachers",
+   "type": "external",
+   "label": "教师 · 提供教材",
+   "sublabel": "PDF / TXT / MD / DOCX / PPTX",
+   "row": 0,
+   "col": 0,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "parsers",
+   "type": "backend",
+   "label": "文档解析层",
+   "sublabel": "pdfplumber · pypdf · 编码回退",
+   "row": 0,
+   "col": 1,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "tools",
+   "type": "backend",
+   "label": "Agent 工具层 ×8",
+   "sublabel": "find_section · read_pages · search_local …",
+   "row": 0,
+   "col": 2,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "mimo",
+   "type": "cloud",
+   "label": "Mimo v2.6 Pro",
+   "sublabel": "Mimo v2.6 Pro · 原生 Tool Calling",
+   "row": 0,
+   "col": 3,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "artifacts",
+   "type": "database",
+   "label": "章节产物 · 教材溯源",
+   "sublabel": "学习方案 · 题库 · QA 报告 · 溯源",
+   "row": 1,
+   "col": 0,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "verify",
+   "type": "backend",
+   "label": "独立验证员",
+   "sublabel": "逐题重新解题 · 修正 · 复查轮",
+   "row": 1,
+   "col": 1,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "controller",
+   "type": "backend",
+   "label": "状态机控制器",
+   "sublabel": "TARGET → LOCATE → … → COMPLETE 十阶段",
+   "row": 1,
+   "col": 2,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "psychqa",
+   "type": "backend",
+   "label": "心理学 QA · 7 条原则",
+   "sublabel": "逐条检查 → 修订 → 复查循环",
+   "row": 1,
+   "col": 3,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "student",
+   "type": "external",
+   "label": "学生",
+   "sublabel": "学习 · 作答 · 游玩",
+   "row": 2,
+   "col": 0,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "webapp",
+   "type": "frontend",
+   "label": "Web 学习端",
+   "sublabel": "逐句引导 · 即时反馈 · 掌握标准自查",
+   "row": 2,
+   "col": 1,
+   "size": [
+    248,
+    100
+   ]
+  },
+  {
+   "id": "game",
+   "type": "frontend",
+   "label": "游戏模式 · Phaser",
+   "sublabel": "世界地图 · 答题战斗 · XP 等级",
+   "row": 2,
+   "col": 2,
+   "size": [
+    248,
+    100
+   ]
+  }
+ ],
+ "boundaries": [
+  {
+   "kind": "region",
+   "label": "后端 · Python FastAPI",
+   "wraps": [
+    "parsers",
+    "tools",
+    "verify",
+    "controller",
+    "psychqa",
+    "artifacts"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "前端 · React + TypeScript",
+   "wraps": [
+    "webapp",
+    "game"
+   ]
+  }
+ ],
+ "connections": [
+  {
+   "id": "e_teachers_parsers",
+   "from": "teachers",
+   "to": "parsers",
+   "label": "放入教材",
+   "labelDy": 140
+  },
+  {
+   "id": "e_parsers_tools",
+   "from": "parsers",
+   "to": "tools",
+   "label": "统一页模型",
+   "labelDy": 140
+  },
+  {
+   "id": "e_tools_ds",
+   "from": "tools",
+   "to": "mimo",
+   "label": "Tool Calling 循环",
+   "variant": "dashed",
+   "labelDy": 140,
+   "labelDx": -80
+  },
+  {
+   "id": "e_ctrl_ds",
+   "from": "controller",
+   "to": "mimo",
+   "label": "阶段 Prompt 驱动"
+  },
+  {
+   "id": "e_ctrl_qa",
+   "from": "controller",
+   "to": "psychqa",
+   "label": "阶段 7 · 修订循环",
+   "labelDy": 140,
+   "labelDx": 0
+  },
+  {
+   "id": "e_ctrl_verify",
+   "from": "controller",
+   "to": "verify",
+   "label": "阶段 8 独立验证",
+   "labelDy": 140
+  },
+  {
+   "id": "e_verify_art",
+   "from": "verify",
+   "to": "artifacts",
+   "label": "修正题库落盘",
+   "variant": "dashed",
+   "labelDy": 140,
+   "labelDx": -80
+  },
+  {
+   "id": "e_art_web",
+   "from": "artifacts",
+   "to": "webapp",
+   "label": "读取渲染"
+  },
+  {
+   "id": "e_web_game",
+   "from": "webapp",
+   "to": "game",
+   "label": "🎮 模式切换",
+   "labelDy": 140
+  },
+  {
+   "id": "e_student_web",
+   "from": "student",
+   "to": "webapp"
+  }
+ ]
+}

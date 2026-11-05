@@ -1,0 +1,1422 @@
+{
+ "generated_at": "2026-09-27T08:31:44.497Z",
+ "note": "静态演示模式内置数据：抽象代数·第一章（Chapter Agent 真实运行产物）",
+ "projects": [
+  {
+   "name": "abstract-algebra",
+   "file_count": 1
+  }
+ ],
+ "files": [
+  {
+   "name": "sample_abstract_algebra.md",
+   "size": 10728,
+   "ext": ".md",
+   "pages": 3,
+   "parse_ok": true,
+   "mtime": 1790095994
+  }
+ ],
+ "runs": [
+  {
+   "slug": "第一章",
+   "target": "第一章",
+   "status": "COMPLETE",
+   "error": null,
+   "updated_at": 1790497904
+  }
+ ],
+ "status": {
+  "run_id": "第一章",
+  "project": "abstract-algebra",
+  "target": "第一章",
+  "phase": "COMPLETE",
+  "running": false,
+  "flags": {
+   "source_located": true,
+   "chapter_read_complete": true,
+   "understanding_complete": true,
+   "design_complete": true,
+   "questions_complete": true,
+   "psychology_check_complete": true,
+   "verification_complete": true
+  },
+  "error": null,
+  "located": {
+   "file": "sample_abstract_algebra.md",
+   "heading": "第一章 群的定义与基本性质",
+   "start_page": 1,
+   "end_page": 2,
+   "confidence": "high",
+   "notes": "在唯一教材文件 sample_abstract_algebra.md 中精确定位到「第一章 群的定义与基本性质」，find_section 返回 score=92，章节范围 P1–P2。该章含小节：1.1 二元运算、1.2 群的定义、1.3 群的基本性质、1.4 简单应用与例题、1.5 本章小结。注意：紧随其后的「习题一」位于 P3，属于本章配套习题；而「第二章 子群与循环群」明确标注不在本次测试范围。文件为文本类资料，'页'为约 2200 字符的虚拟分块，非纸质页码。"
+  },
+  "events_total": 68,
+  "events": [
+   {
+    "seq": 1,
+    "ts": 1790095769.7746298,
+    "phase": "TARGET",
+    "level": "info",
+    "message": "进入阶段：TARGET —— 解析目标",
+    "data": {
+     "phase": "TARGET"
+    }
+   },
+   {
+    "seq": 2,
+    "ts": 1790095769.775397,
+    "phase": "TARGET",
+    "level": "info",
+    "message": "任务开始：分析「第一章」（项目 abstract-algebra）",
+    "data": {}
+   },
+   {
+    "seq": 3,
+    "ts": 1790095769.7755442,
+    "phase": "TARGET",
+    "level": "success",
+    "message": "已读取项目资料：1 个教材文件",
+    "data": {}
+   },
+   {
+    "seq": 4,
+    "ts": 1790095769.7756429,
+    "phase": "LOCATE",
+    "level": "info",
+    "message": "进入阶段：LOCATE —— 定位章节",
+    "data": {
+     "phase": "LOCATE"
+    }
+   },
+   {
+    "seq": 5,
+    "ts": 1790095769.776034,
+    "phase": "LOCATE",
+    "level": "info",
+    "message": "进入阶段：LOCATE —— 定位章节",
+    "data": {
+     "phase": "LOCATE"
+    }
+   },
+   {
+    "seq": 6,
+    "ts": 1790095770.485267,
+    "phase": "LOCATE",
+    "level": "tool",
+    "message": "调用工具 list_files()",
+    "data": {
+     "tool": "list_files"
+    }
+   },
+   {
+    "seq": 7,
+    "ts": 1790095771.223277,
+    "phase": "LOCATE",
+    "level": "tool",
+    "message": "调用工具 get_document_outline(file='sample_abstract_algebra.md')",
+    "data": {
+     "tool": "get_document_outline"
+    }
+   },
+   {
+    "seq": 8,
+    "ts": 1790095771.2241511,
+    "phase": "LOCATE",
+    "level": "tool",
+    "message": "调用工具 find_section(file='sample_abstract_algebra.md', target='第一章')",
+    "data": {
+     "tool": "find_section"
+    }
+   },
+   {
+    "seq": 9,
+    "ts": 1790095771.2248378,
+    "phase": "LOCATE",
+    "level": "info",
+    "message": "正在教材中定位「第一章」……",
+    "data": {}
+   },
+   {
+    "seq": 10,
+    "ts": 1790095772.607268,
+    "phase": "LOCATE",
+    "level": "tool",
+    "message": "调用工具 submit_location(...)",
+    "data": {
+     "tool": "submit_location"
+    }
+   },
+   {
+    "seq": 11,
+    "ts": 1790095772.607726,
+    "phase": "LOCATE",
+    "level": "success",
+    "message": "已定位「第一章 群的定义与基本性质」：sample_abstract_algebra.md P1–P2（共 2 页）",
+    "data": {}
+   },
+   {
+    "seq": 12,
+    "ts": 1790095772.609196,
+    "phase": "LOCATE",
+    "level": "success",
+    "message": "定位结果已记录。下一阶段将完整读取 P1–P2。",
+    "data": {}
+   },
+   {
+    "seq": 13,
+    "ts": 1790095772.609977,
+    "phase": "READ",
+    "level": "info",
+    "message": "进入阶段：READ —— 完整阅读章节",
+    "data": {
+     "phase": "READ"
+    }
+   },
+   {
+    "seq": 14,
+    "ts": 1790095772.610611,
+    "phase": "READ",
+    "level": "info",
+    "message": "进入阶段：READ —— 完整阅读章节",
+    "data": {
+     "phase": "READ"
+    }
+   },
+   {
+    "seq": 15,
+    "ts": 1790095773.559808,
+    "phase": "READ",
+    "level": "tool",
+    "message": "调用工具 read_pages(file='sample_abstract_algebra.md', P1–P2)",
+    "data": {
+     "tool": "read_pages"
+    }
+   },
+   {
+    "seq": 16,
+    "ts": 1790095773.560571,
+    "phase": "READ",
+    "level": "info",
+    "message": "阅读进度：已完整阅读 2/2 页",
+    "data": {}
+   },
+   {
+    "seq": 17,
+    "ts": 1790095777.552171,
+    "phase": "READ",
+    "level": "tool",
+    "message": "调用工具 submit_reading(...)",
+    "data": {
+     "tool": "submit_reading"
+    }
+   },
+   {
+    "seq": 18,
+    "ts": 1790095777.552526,
+    "phase": "READ",
+    "level": "success",
+    "message": "章节读取完成（已覆盖全部页面）",
+    "data": {}
+   },
+   {
+    "seq": 19,
+    "ts": 1790095777.553814,
+    "phase": "READ",
+    "level": "success",
+    "message": "阅读完整性校验通过。",
+    "data": {}
+   },
+   {
+    "seq": 20,
+    "ts": 1790095777.554566,
+    "phase": "UNDERSTAND",
+    "level": "info",
+    "message": "进入阶段：UNDERSTAND —— 生成章节理解",
+    "data": {
+     "phase": "UNDERSTAND"
+    }
+   },
+   {
+    "seq": 21,
+    "ts": 1790095777.55511,
+    "phase": "UNDERSTAND",
+    "level": "info",
+    "message": "进入阶段：UNDERSTAND —— 生成章节理解",
+    "data": {
+     "phase": "UNDERSTAND"
+    }
+   },
+   {
+    "seq": 22,
+    "ts": 1790095789.947734,
+    "phase": "UNDERSTAND",
+    "level": "tool",
+    "message": "调用工具 submit_chapter_context(...)",
+    "data": {
+     "tool": "submit_chapter_context"
+    }
+   },
+   {
+    "seq": 23,
+    "ts": 1790095789.950909,
+    "phase": "UNDERSTAND",
+    "level": "success",
+    "message": "章节理解已保存（7 概念 / 6 定义）。",
+    "data": {}
+   },
+   {
+    "seq": 24,
+    "ts": 1790095789.951603,
+    "phase": "UNDERSTAND",
+    "level": "success",
+    "message": "章节理解完成：7 个核心概念、6 个定义、9 个定理",
+    "data": {}
+   },
+   {
+    "seq": 25,
+    "ts": 1790095789.951696,
+    "phase": "DESIGN",
+    "level": "info",
+    "message": "进入阶段：DESIGN —— 设计学习方案",
+    "data": {
+     "phase": "DESIGN"
+    }
+   },
+   {
+    "seq": 26,
+    "ts": 1790095789.952008,
+    "phase": "DESIGN",
+    "level": "info",
+    "message": "进入阶段：DESIGN —— 设计学习方案",
+    "data": {
+     "phase": "DESIGN"
+    }
+   },
+   {
+    "seq": 27,
+    "ts": 1790095801.3576808,
+    "phase": "DESIGN",
+    "level": "tool",
+    "message": "调用工具 submit_learning_plan(...)",
+    "data": {
+     "tool": "submit_learning_plan"
+    }
+   },
+   {
+    "seq": 28,
+    "ts": 1790095801.360218,
+    "phase": "DESIGN",
+    "level": "success",
+    "message": "学习方案已生成：5 个学习阶段",
+    "data": {}
+   },
+   {
+    "seq": 29,
+    "ts": 1790095801.361814,
+    "phase": "DESIGN",
+    "level": "success",
+    "message": "学习方案已保存。",
+    "data": {}
+   },
+   {
+    "seq": 30,
+    "ts": 1790095801.362937,
+    "phase": "GENERATE",
+    "level": "info",
+    "message": "进入阶段：GENERATE —— 生成练习",
+    "data": {
+     "phase": "GENERATE"
+    }
+   },
+   {
+    "seq": 31,
+    "ts": 1790095801.3636649,
+    "phase": "GENERATE",
+    "level": "info",
+    "message": "进入阶段：GENERATE —— 生成练习",
+    "data": {
+     "phase": "GENERATE"
+    }
+   },
+   {
+    "seq": 32,
+    "ts": 1790095807.346665,
+    "phase": "GENERATE",
+    "level": "tool",
+    "message": "调用工具 submit_question_pool(...)",
+    "data": {
+     "tool": "submit_question_pool"
+    }
+   },
+   {
+    "seq": 33,
+    "ts": 1790095807.3479629,
+    "phase": "GENERATE",
+    "level": "info",
+    "message": "练习批次 1 已提交：累计 6 题",
+    "data": {}
+   },
+   {
+    "seq": 34,
+    "ts": 1790095814.242623,
+    "phase": "GENERATE",
+    "level": "tool",
+    "message": "调用工具 submit_question_pool(...)",
+    "data": {
+     "tool": "submit_question_pool"
+    }
+   },
+   {
+    "seq": 35,
+    "ts": 1790095814.2443829,
+    "phase": "GENERATE",
+    "level": "info",
+    "message": "练习批次 2 已提交：累计 12 题",
+    "data": {}
+   },
+   {
+    "seq": 36,
+    "ts": 1790095822.3172889,
+    "phase": "GENERATE",
+    "level": "tool",
+    "message": "调用工具 submit_question_pool(...)",
+    "data": {
+     "tool": "submit_question_pool"
+    }
+   },
+   {
+    "seq": 37,
+    "ts": 1790095822.3199549,
+    "phase": "GENERATE",
+    "level": "success",
+    "message": "练习生成完成：共 18 题",
+    "data": {}
+   },
+   {
+    "seq": 38,
+    "ts": 1790095822.321375,
+    "phase": "GENERATE",
+    "level": "success",
+    "message": "题库已定稿（共 18 题）。",
+    "data": {}
+   },
+   {
+    "seq": 39,
+    "ts": 1790095822.326122,
+    "phase": "GENERATE",
+    "level": "success",
+    "message": "练习生成完成：共 18 道题",
+    "data": {}
+   },
+   {
+    "seq": 40,
+    "ts": 1790095822.326248,
+    "phase": "PSYCHOLOGY_CHECK",
+    "level": "info",
+    "message": "进入阶段：PSYCHOLOGY_CHECK —— 7条心理学原则检查",
+    "data": {
+     "phase": "PSYCHOLOGY_CHECK"
+    }
+   },
+   {
+    "seq": 41,
+    "ts": 1790095822.326883,
+    "phase": "PSYCHOLOGY_CHECK",
+    "level": "info",
+    "message": "进入阶段：PSYCHOLOGY_CHECK —— 7条心理学原则检查",
+    "data": {
+     "phase": "PSYCHOLOGY_CHECK"
+    }
+   },
+   {
+    "seq": 42,
+    "ts": 1790095823.408294,
+    "phase": "PSYCHOLOGY_CHECK",
+    "level": "tool",
+    "message": "调用工具 read_file('workspace/第一章/learning_plan.json')",
+    "data": {
+     "tool": "read_file"
+    }
+   },
+   {
+    "seq": 43,
+    "ts": 1790095823.40992,
+    "phase": "PSYCHOLOGY_CHECK",
+    "level": "tool",
+    "message": "调用工具 read_file('workspace/第一章/question_pool.json')",
+    "data": {
+     "tool": "read_file"
+    }
+   },
+   {
+    "seq": 44,
+    "ts": 1790095833.223448,
+    "phase": "PSYCHOLOGY_CHECK",
+    "level": "tool",
+    "message": "调用工具 submit_learning_plan(...)",
+    "data": {
+     "tool": "submit_learning_plan"
+    }
+   },
+   {
+    "seq": 45,
+    "ts": 1790095833.2243788,
+    "phase": "PSYCHOLOGY_CHECK",
+    "level": "info",
+    "message": "QA 修订：学习方案已更新",
+    "data": {}
+   },
+   {
+    "seq": 46,
+    "ts": 1790095838.288596,
+    "phase": "PSYCHOLOGY_CHECK",
+    "level": "tool",
+    "message": "调用工具 submit_qa_report(...)",
+    "data": {
+     "tool": "submit_qa_report"
+    }
+   },
+   {
+    "seq": 47,
+    "ts": 1790095838.2898078,
+    "phase": "PSYCHOLOGY_CHECK",
+    "level": "success",
+    "message": "7 条心理学原则检查：全部通过",
+    "data": {}
+   },
+   {
+    "seq": 48,
+    "ts": 1790095838.291532,
+    "phase": "PSYCHOLOGY_CHECK",
+    "level": "success",
+    "message": "7 条原则检查通过。",
+    "data": {}
+   },
+   {
+    "seq": 49,
+    "ts": 1790095838.2927191,
+    "phase": "VERIFY",
+    "level": "info",
+    "message": "进入阶段：VERIFY —— 独立验证",
+    "data": {
+     "phase": "VERIFY"
+    }
+   },
+   {
+    "seq": 50,
+    "ts": 1790095838.293174,
+    "phase": "VERIFY",
+    "level": "info",
+    "message": "进入阶段：VERIFY —— 独立验证",
+    "data": {
+     "phase": "VERIFY"
+    }
+   },
+   {
+    "seq": 51,
+    "ts": 1790095839.751858,
+    "phase": "VERIFY",
+    "level": "tool",
+    "message": "调用工具 read_file('workspace/第一章/learning_plan.json')",
+    "data": {
+     "tool": "read_file"
+    }
+   },
+   {
+    "seq": 52,
+    "ts": 1790095839.753672,
+    "phase": "VERIFY",
+    "level": "tool",
+    "message": "调用工具 read_file('workspace/第一章/question_pool.json')",
+    "data": {
+     "tool": "read_file"
+    }
+   },
+   {
+    "seq": 53,
+    "ts": 1790095842.815768,
+    "phase": "VERIFY",
+    "level": "tool",
+    "message": "调用工具 read_pages(file='sample_abstract_algebra.md', P1–P2)",
+    "data": {
+     "tool": "read_pages"
+    }
+   },
+   {
+    "seq": 54,
+    "ts": 1790095842.816315,
+    "phase": "VERIFY",
+    "level": "info",
+    "message": "阅读进度：已完整阅读 2/2 页",
+    "data": {}
+   },
+   {
+    "seq": 55,
+    "ts": 1790095847.707463,
+    "phase": "VERIFY",
+    "level": "tool",
+    "message": "调用工具 submit_verification(...)",
+    "data": {
+     "tool": "submit_verification"
+    }
+   },
+   {
+    "seq": 56,
+    "ts": 1790095847.709533,
+    "phase": "VERIFY",
+    "level": "success",
+    "message": "验证报告：重解 18 题，发现 1 个问题，修正 1 处",
+    "data": {}
+   },
+   {
+    "seq": 57,
+    "ts": 1790095847.711461,
+    "phase": "VERIFY",
+    "level": "success",
+    "message": "验证报告已记录（修正 1 处）。系统将安排复查轮。",
+    "data": {}
+   },
+   {
+    "seq": 58,
+    "ts": 1790095847.712969,
+    "phase": "VERIFY",
+    "level": "info",
+    "message": "已应用 1 处修正，进入第 2 轮复查",
+    "data": {}
+   },
+   {
+    "seq": 59,
+    "ts": 1790095847.7132359,
+    "phase": "VERIFY",
+    "level": "info",
+    "message": "进入阶段：VERIFY —— 独立验证",
+    "data": {
+     "phase": "VERIFY"
+    }
+   },
+   {
+    "seq": 60,
+    "ts": 1790095848.8078961,
+    "phase": "VERIFY",
+    "level": "tool",
+    "message": "调用工具 read_file('workspace/第一章/question_pool.json')",
+    "data": {
+     "tool": "read_file"
+    }
+   },
+   {
+    "seq": 61,
+    "ts": 1790095852.575077,
+    "phase": "VERIFY",
+    "level": "tool",
+    "message": "调用工具 submit_verification(...)",
+    "data": {
+     "tool": "submit_verification"
+    }
+   },
+   {
+    "seq": 62,
+    "ts": 1790095852.575998,
+    "phase": "VERIFY",
+    "level": "success",
+    "message": "验证报告：重解 18 题，发现 0 个问题，修正 0 处",
+    "data": {}
+   },
+   {
+    "seq": 63,
+    "ts": 1790095852.578613,
+    "phase": "VERIFY",
+    "level": "success",
+    "message": "验证报告已记录（修正 0 处）。",
+    "data": {}
+   },
+   {
+    "seq": 64,
+    "ts": 1790095852.581805,
+    "phase": "VERIFY",
+    "level": "success",
+    "message": "独立验证完成：通过",
+    "data": {}
+   },
+   {
+    "seq": 65,
+    "ts": 1790095852.581942,
+    "phase": "SAVE",
+    "level": "info",
+    "message": "进入阶段：SAVE —— 保存结果",
+    "data": {
+     "phase": "SAVE"
+    }
+   },
+   {
+    "seq": 66,
+    "ts": 1790095852.5825121,
+    "phase": "SAVE",
+    "level": "info",
+    "message": "正在保存全部结果……",
+    "data": {}
+   },
+   {
+    "seq": 67,
+    "ts": 1790095852.587432,
+    "phase": "SAVE",
+    "level": "success",
+    "message": "全部结果已保存：workspace/第一章/ 与 output/第一章/",
+    "data": {}
+   },
+   {
+    "seq": 68,
+    "ts": 1790095852.5875368,
+    "phase": "COMPLETE",
+    "level": "info",
+    "message": "进入阶段：COMPLETE —— 完成",
+    "data": {
+     "phase": "COMPLETE"
+    }
+   }
+  ]
+ },
+ "result": {
+  "run_id": "第一章",
+  "status": "COMPLETE",
+  "target": "第一章",
+  "located": {
+   "file": "sample_abstract_algebra.md",
+   "heading": "第一章 群的定义与基本性质",
+   "start_page": 1,
+   "end_page": 2,
+   "confidence": "high",
+   "notes": "在唯一教材文件 sample_abstract_algebra.md 中精确定位到「第一章 群的定义与基本性质」，find_section 返回 score=92，章节范围 P1–P2。该章含小节：1.1 二元运算、1.2 群的定义、1.3 群的基本性质、1.4 简单应用与例题、1.5 本章小结。注意：紧随其后的「习题一」位于 P3，属于本章配套习题；而「第二章 子群与循环群」明确标注不在本次测试范围。文件为文本类资料，'页'为约 2200 字符的虚拟分块，非纸质页码。"
+  },
+  "chapter_context": {
+   "chapter": "第一章 群的定义与基本性质",
+   "source_files": [
+    "sample_abstract_algebra.md"
+   ],
+   "core_concepts": [
+    "二元运算与封闭性",
+    "结合律与交换律",
+    "群的四条公理",
+    "交换群（Abel 群）与幺半群",
+    "单位元与逆元的唯一性",
+    "消去律与方程可解性",
+    "穿脱原理 (a∘b)⁻¹=b⁻¹∘a⁻¹"
+   ],
+   "definitions": [
+    {
+     "term": "二元运算",
+     "content": "设 S 是一个非空集合。如果映射 μ : S × S → S，即对 S 中任意两个有序元素 (a, b)，都有 S 中唯一确定的元素 μ(a, b) 与之对应，则称 μ 是 S 上的一个二元运算，简记为 ab（乘法记法）或 a + b（加法记法）。换言之，二元运算就是\"集合中任意两个元素结合之后仍在集合中\"的法则，这一性质称为运算的封闭性。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 1
+    },
+    {
+     "term": "结合律",
+     "content": "设 ∘ 是集合 S 上的二元运算。若对任意 a, b, c ∈ S 都有 (a ∘ b) ∘ c = a ∘ (b ∘ c)，则称 ∘ 满足结合律。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 1
+    },
+    {
+     "term": "交换律",
+     "content": "设 ∘ 是集合 S 上的二元运算。若对任意 a, b ∈ S 都有 a ∘ b = b ∘ a，则称 ∘ 满足交换律。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 1
+    },
+    {
+     "term": "群",
+     "content": "设 G 是一个非空集合，∘ 是 G 上的一个二元运算。如果下列四个条件（群公理）都成立，则称 (G, ∘) 是一个群：1. 封闭性：对任意 a, b ∈ G，a ∘ b ∈ G；2. 结合律：对任意 a, b, c ∈ G，(a ∘ b) ∘ c = a ∘ (b ∘ c)；3. 单位元存在：存在元素 e ∈ G，使得对任意 a ∈ G，e ∘ a = a ∘ e = a；4. 逆元存在：对任意 a ∈ G，存在元素 b ∈ G，使 a ∘ b = b ∘ a = e。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 1
+    },
+    {
+     "term": "交换群（Abel 群）",
+     "content": "若群 G 还满足交换律（对任意 a, b ∈ G，a ∘ b = b ∘ a），则称 G 是一个交换群（Abel 群）。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 1
+    },
+    {
+     "term": "幺半群",
+     "content": "满足群公理中条件 1（封闭性）、2（结合律）、3（单位元存在）而不满足条件 4（逆元存在）的代数结构称为幺半群。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 1
+    }
+   ],
+   "theorems": [
+    {
+     "name": "注 1.1.5（结合律与交换律的独立性）",
+     "content": "当运算满足结合律时，a₁a₂⋯aₙ 不加括号有意义。但交换律不能推出结合律，结合律也不能推出交换律：两者互相独立。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 1
+    },
+    {
+     "name": "注 1.2.6（判断一个结构是不是群的标准程序）",
+     "content": "按顺序检查四件事：是否封闭 → 是否满足结合律 → 找单位元 → 验证每个元素有逆元。任何一步失败就立刻排除。判断\"不是群\"最常见的办法是：找一个具体元素，说明它的逆元不在集合中（如例 1.2.2 中的 ℤ 对乘法），或说明运算不封闭（如 ℕ 对减法）。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 2
+    },
+    {
+     "name": "定理 1.3.1（单位元的唯一性）",
+     "content": "群 G 的单位元是唯一的。证明：设 e 与 e′ 都是 G 的单位元。把 e 看作单位元，则有 e′ = e ∘ e′；把 e′ 看作单位元，又有 e ∘ e′ = e。于是 e′ = e ∘ e′ = e。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 2
+    },
+    {
+     "name": "定理 1.3.2（逆元的唯一性）",
+     "content": "群 G 中每个元素 a 的逆元是唯一的，记作 a⁻¹。证明：设 b 与 c 都是 a 的逆元，则 b = b ∘ e = b ∘ (a ∘ c) = (b ∘ a) ∘ c = e ∘ c = c，所以 b = c。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 2
+    },
+    {
+     "name": "定理 1.3.3（消去律）",
+     "content": "在群 G 中，若 a ∘ b = a ∘ c 或 b ∘ a = c ∘ a，则 b = c。证明：用 a⁻¹ 从左侧乘 a∘b = a∘c 两端，得 a⁻¹ ∘ (a ∘ b) = (a⁻¹ ∘ a) ∘ b = e ∘ b = b，同理右端为 c，故 b = c；右侧情形同理。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 2
+    },
+    {
+     "name": "定理 1.3.4（方程的可解性）",
+     "content": "在群 G 中，方程 a ∘ x = b 与 y ∘ a = b 都有唯一解：x = a⁻¹ ∘ b，y = b ∘ a⁻¹。证明：代入验证 a ∘ (a⁻¹ ∘ b) = (a ∘ a⁻¹) ∘ b = e ∘ b = b，故 x = a⁻¹∘b 是解；由消去律知解唯一；另一方程同理。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 2
+    },
+    {
+     "name": "注 1.3.5（交换群中两方程同解）",
+     "content": "在交换群中 a⁻¹ ∘ b = b ∘ a⁻¹，两个方程同解；在非交换群中两者一般不同，顺序不可随意交换。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 2
+    },
+    {
+     "name": "性质 1.3.6（逆元的性质）",
+     "content": "在群 G 中：1. (a⁻¹)⁻¹ = a；2. (a ∘ b)⁻¹ = b⁻¹ ∘ a⁻¹（穿脱原理：先穿袜子后穿鞋，脱的时候顺序相反）。证明：第 1 条由逆元唯一性即得；第 2 条验证 (a∘b) ∘ (b⁻¹∘a⁻¹) = a ∘ (b ∘ b⁻¹) ∘ a⁻¹ = a ∘ e ∘ a⁻¹ = e，同理反向也等于 e，故 b⁻¹∘a⁻¹ 是 a∘b 的逆元。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 2
+    },
+    {
+     "name": "注 1.3.7（穿脱原理在非交换群中的重要性）",
+     "content": "穿脱原理在非交换群中尤其重要：一般 (a∘b)⁻¹ ≠ a⁻¹ ∘ b⁻¹。例如 Klein 四元群中取 a, b：(a∘b)⁻¹ = c⁻¹ = c，而 a⁻¹∘b⁻¹ = a∘b = c，此处恰好相等是因为该群是交换群；对非交换的结构则不一定成立。",
+     "source_file": "sample_abstract_algebra.md",
+     "source_page": 2
+    }
+   ],
+   "key_examples": [
+    {
+     "name": "例 1.1.2（是二元运算的例子）",
+     "content": "1. 整数集 ℤ 上的普通加法：任意两个整数之和仍是整数；2. 正有理数集 ℚ⁺ 上的普通乘法；3. 集合 X 上的全体映射构成的集合 Map(X, X) 关于映射的复合。（P1）"
+    },
+    {
+     "name": "例 1.1.3（不是二元运算的例子）",
+     "content": "1. 自然数集 ℕ 上的减法：1 − 2 = −1 不属于 ℕ（不封闭）；2. ℤ 上的除法：1 ÷ 2 ∉ ℤ（不封闭）。（P1）"
+    },
+    {
+     "name": "例 1.1.6（a∘b = a+b+ab）",
+     "content": "设 a, b 是实数，定义运算 a ∘ b = a + b + ab。这个运算满足交换律（a+b+ab = b+a+ba），也可以验证它满足结合律。（P1）"
+    },
+    {
+     "name": "例 1.2.2（ℤ 对加法是群、对乘法不是群）",
+     "content": "ℤ 关于普通加法构成交换群：封闭性与结合律是熟知的；0 是单位元；每个整数 a 的逆元是它的相反数 −a。ℤ 关于普通乘法不是群：虽然 1 是单位元，但 2 的逆元 1/2 ∉ ℤ（逆元不存在）。（P1）"
+    },
+    {
+     "name": "例 1.2.3（ℚ⁺ 对乘法是交换群）",
+     "content": "正有理数集 ℚ⁺ 关于乘法构成交换群：单位元是 1，每个 q ∈ ℚ⁺ 的逆元是 1/q。（P1）"
+    },
+    {
+     "name": "例 1.2.4（模 n 剩余类加法群 ℤₙ）",
+     "content": "把整数按模 n 同余分类，得到 n 个剩余类 [0], [1], …, [n−1]（参见第零章 0.2 与 0.3）。定义 [a] + [b] = [a + b]。由带余除法可以验证这个定义与代表元的选取无关，因而它是 ℤₙ = {[0], [1], …, [n−1]} 上的二元运算。(ℤₙ, +) 构成交换群：单位元是 [0]，[a] 的逆元是 [−a] = [n − a]。（P1）"
+    },
+    {
+     "name": "例 1.2.5（Klein 四元群）",
+     "content": "设 G = {e, a, b, c}，运算由运算表给出（e 为单位元，a∘a = b∘b = c∘c = e）。可以验证它构成交换群，其中每个非单位元都以自身为逆元。（P2）"
+    },
+    {
+     "name": "例 1.4.1（验证 (ℤ₃, +) 是群并求 [2] 的逆元）",
+     "content": "ℤ₃ = {[0], [1], [2]}。封闭性：加法表每项仍是剩余类。结合律：([a]+[b])+[c] = [a+b+c] = [a]+([b]+[c])。单位元：[0]。逆元：[0]⁻¹ = [0]，[1]⁻¹ = [2]（因为 [1] + [2] = [3] = [0]），[2]⁻¹ = [1]。四个条件都满足，故 (ℤ₃, +) 是群，且是交换群。[2] 的逆元是 [1]。（P2）"
+    },
+    {
+     "name": "例 1.4.2（由 a∘b∘c = e 求 c⁻¹）",
+     "content": "在群 G 中，已知 a ∘ b ∘ c = e，求 c⁻¹。解：由 a∘b∘c = e 得 (a∘b)∘c = e，即 c 是 a∘b 的右逆；群中右逆必是逆元，故 c = (a∘b)⁻¹ = b⁻¹ ∘ a⁻¹（穿脱原理）。（P2）"
+    },
+    {
+     "name": "例 1.4.3（反例：幺半群不是群）",
+     "content": "ℕ ∪ {0} 关于加法：封闭、结合，0 是单位元，但除 0 外任何元素没有逆元。它是幺半群而非群。（P2）"
+    }
+   ],
+   "skills": [
+    "判断一个给定的运算是否为集合上的二元运算（检验封闭性）",
+    "验证一个运算是否满足结合律、是否满足交换律",
+    "按标准程序验证一个代数结构是否为群（封闭性→结合律→单位元→逆元）",
+    "构造反例说明某结构不是群（如逆元不在集合中、运算不封闭）",
+    "求群中给定元素的逆元（如 ℤₙ 中 [a] 的逆元、Klein 四元群中元素的逆元）",
+    "利用单位元唯一性、逆元唯一性进行证明",
+    "利用消去律从等式两端消去元素",
+    "求解群中的方程 a∘x=b 与 y∘a=b",
+    "运用穿脱原理计算 (a∘b)⁻¹ = b⁻¹∘a⁻¹",
+    "验证模 n 剩余类加法群 (ℤₙ, +) 的群公理"
+   ],
+   "common_mistakes": [
+    "把不封闭的运算当作二元运算（如 ℕ 上的减法、ℤ 上的除法）",
+    "误以为交换律与结合律可以互相推出（注 1.1.5 指出两者互相独立）",
+    "验证群时只检查部分公理，遗漏逆元存在性（如误把 ℤ 对乘法当作群，忽略 2 的逆元 1/2 ∉ ℤ）",
+    "在非交换群中随意交换元素顺序，误用 (a∘b)⁻¹ = a⁻¹∘b⁻¹（正确应为 b⁻¹∘a⁻¹，见注 1.3.7）",
+    "混淆幺半群与群，忽略幺半群不要求逆元存在（如 ℕ∪{0} 对加法）",
+    "在非交换群中把方程 a∘x=b 与 y∘a=b 的解混为一谈（注 1.3.5 指出两者一般不同）"
+   ],
+   "difficulty_points": [
+    "群公理的完整验证：需要逐条检查封闭性、结合律、单位元、逆元，尤其逆元存在性容易被忽略",
+    "结合律的验证往往比封闭性、交换律更繁琐（如例 1.1.6 中 a∘b=a+b+ab 的结合律验证）",
+    "模 n 剩余类运算的良定义性：需说明 [a]+[b]=[a+b] 与代表元选取无关（依赖第零章带余除法）",
+    "穿脱原理 (a∘b)⁻¹=b⁻¹∘a⁻¹ 的理解与在非交换群中的应用（注 1.3.7）",
+    "区分交换群与非交换群中逆元、方程解的性质差异（注 1.3.5、注 1.3.7）",
+    "利用单位元/逆元唯一性进行抽象证明（定理 1.3.1、1.3.2 的证明思路）"
+   ],
+   "prerequisites": [
+    "集合与映射（单射、满射、双射）——第零章 0.1（同文件 P1）",
+    "等价关系与分类、等价类——第零章 0.2（同文件 P1）",
+    "整数的整除、带余除法、模 n 同余——第零章 0.3（同文件 P1）"
+   ],
+   "source_references": [
+    {
+     "file": "sample_abstract_algebra.md",
+     "page": 1,
+     "locator": "第一章 1.1 二元运算（定义 1.1.1、例 1.1.2、例 1.1.3、定义 1.1.4、注 1.1.5、例 1.1.6）"
+    },
+    {
+     "file": "sample_abstract_algebra.md",
+     "page": 1,
+     "locator": "第一章 1.2 群的定义（定义 1.2.1、例 1.2.2、例 1.2.3、例 1.2.4）"
+    },
+    {
+     "file": "sample_abstract_algebra.md",
+     "page": 2,
+     "locator": "第一章 1.2 群的定义（例 1.2.5 Klein 四元群、注 1.2.6）"
+    },
+    {
+     "file": "sample_abstract_algebra.md",
+     "page": 2,
+     "locator": "第一章 1.3 群的基本性质（定理 1.3.1–1.3.4、注 1.3.5、性质 1.3.6、注 1.3.7）"
+    },
+    {
+     "file": "sample_abstract_algebra.md",
+     "page": 2,
+     "locator": "第一章 1.4 简单应用与例题（例 1.4.1、例 1.4.2、例 1.4.3）"
+    },
+    {
+     "file": "sample_abstract_algebra.md",
+     "page": 2,
+     "locator": "第一章 1.5 本章小结"
+    },
+    {
+     "file": "sample_abstract_algebra.md",
+     "page": 1,
+     "locator": "第零章 0.1 集合与映射、0.2 等价关系与分类、0.3 整数的整除与带余除法（本章前置概念，同文件 P1）"
+    }
+   ]
+  },
+  "learning_plan": {
+   "chapter": "第一章 群的定义与基本性质",
+   "common_failure_points": [
+    "失败点：把不封闭的运算当作二元运算（如 ℕ 上的减法）。补救：重读例 1.1.3，逐条检查运算结果是否仍属于原集合。",
+    "失败点：验证群时遗漏逆元存在性，误把 ℤ 对乘法当作群。补救：重读例 1.2.2，明确\"找单位元\"与\"验证每个元素有逆元\"是两步，并对照注 1.2.6 的检查清单。",
+    "失败点：误以为交换律与结合律可互相推出。补救：重读注 1.1.5，并尝试构造只满足其一的运算例子。",
+    "失败点：在非交换群中误用 (a∘b)⁻¹ = a⁻¹∘b⁻¹。补救：重读性质 1.3.6 与注 1.3.7，用 Klein 四元群的具体元素计算对比。",
+    "失败点：混淆幺半群与群，忽略幺半群不要求逆元存在。补救：重读例 1.4.3（ℕ∪{0} 对加法），明确幺半群只满足前三条公理。",
+    "失败点：在非交换群中把 a∘x=b 与 y∘a=b 的解混为一谈。补救：重读注 1.3.5，注意左乘与右乘的区别。",
+    "失败点：模 n 剩余类运算的良定义性理解不清。补救：回溯第零章 0.3 带余除法，理解 [a]+[b]=[a+b] 与代表元选取无关。"
+   ],
+   "learning_objectives": [
+    "能准确判断一个给定运算是否为集合上的二元运算，并说明封闭性是否成立（对应定义 1.1.1、例 1.1.2、例 1.1.3）",
+    "能独立验证一个运算是否满足结合律与交换律，并说明两者互相独立（对应定义 1.1.4、注 1.1.5、例 1.1.6）",
+    "能按标准程序（封闭性→结合律→单位元→逆元）完整验证一个代数结构是否为群，并能构造反例说明某结构不是群（对应定义 1.2.1、注 1.2.6、例 1.2.2、例 1.4.3）",
+    "能独立复述并写出单位元唯一性、逆元唯一性、消去律、方程可解性的证明（对应定理 1.3.1–1.3.4）",
+    "能正确运用穿脱原理 (a∘b)⁻¹=b⁻¹∘a⁻¹ 计算逆元，并说明其在非交换群中的必要性（对应性质 1.3.6、注 1.3.7）",
+    "能在具体群（ℤₙ 加法群、Klein 四元群）中求元素的逆元、解方程（对应例 1.2.4、例 1.2.5、例 1.4.1、例 1.4.2）"
+   ],
+   "learning_sequence": [
+    {
+     "content": [
+      "先读定义 1.1.1（二元运算 = 映射 μ: S×S→S），抓住核心是\"任意两个元素结合后仍在集合中\"即封闭性（P1）。",
+      "对照例 1.1.2（ℤ 加法、ℚ⁺ 乘法、Map(X,X) 复合是二元运算）与例 1.1.3（ℕ 减法、ℤ 除法不是二元运算），体会\"不封闭\"的具体表现（P1）。",
+      "读定义 1.1.4（结合律、交换律）与注 1.1.5（两者互相独立），明确这是两个独立条件（P1）。",
+      "用例 1.1.6（a∘b=a+b+ab）动手验证交换律与结合律（P1）。"
+     ],
+     "goal": "能判断一个给定法则是否为集合上的二元运算，并指出封闭性是否成立；能区分结合律与交换律。",
+     "name": "从封闭性建立二元运算的直觉",
+     "practice": [
+      "判断若干给定法则是否为二元运算，并说明封闭性",
+      "对给定运算分别检验结合律与交换律",
+      "举出一个满足交换律但不满足结合律（或反之）的运算例子"
+     ],
+     "psychology_note": "先建立\"封闭性\"这一最直观的直觉锚点，用正例/反例对比（例 1.1.2 vs 例 1.1.3）制造认知冲突，让学生先感受\"运算可能不封闭\"，再形式化，符合具体→抽象的学习顺序。本阶段难度最低，学生可在 10 分钟内完成第一组判断并获得反馈，形成第一次成功体验。",
+     "stage": 1
+    },
+    {
+     "content": [
+      "精读定义 1.2.1（群的四条公理：封闭性、结合律、单位元、逆元；交换群/Abel 群；幺半群）（P1）。",
+      "读注 1.2.6（判断是否为群的标准程序：封闭→结合→单位元→逆元，任一步失败即排除）（P2）。",
+      "对照例 1.2.2（ℤ 对加法是群、对乘法不是群）、例 1.2.3（ℚ⁺ 对乘法是交换群）、例 1.4.3（ℕ∪{0} 对加法是幺半群而非群），理解\"不是群\"的两类典型反例（P1、P2）。",
+      "读例 1.2.4（模 n 剩余类加法群 ℤₙ）与例 1.2.5（Klein 四元群运算表），认识两个具体群模型（P1、P2）。"
+     ],
+     "goal": "能完整复述群的四条公理，并按标准程序验证一个结构是否为群；能构造反例说明某结构不是群。",
+     "name": "群的四条公理与判断程序",
+     "practice": [
+      "按四步程序验证给定结构是否为群，并写出每一步",
+      "找出一个元素说明某结构不是群（逆元不存在或运算不封闭）",
+      "判断给定结构是群、幺半群还是都不是，并说明理由"
+     ],
+     "psychology_note": "把\"群\"拆成可操作的检查清单（注 1.2.6），降低抽象定义的认知负荷；用\"找反例\"这一主动任务驱动对公理的深层理解，避免死记硬背。",
+     "stage": 2
+    },
+    {
+     "content": [
+      "精读定理 1.3.1（单位元唯一性）与定理 1.3.2（逆元唯一性）的证明，注意\"把 e 看作单位元\"与\"用结合律\"的技巧（P2）。",
+      "精读定理 1.3.3（消去律）与定理 1.3.4（方程可解性）的证明，注意用 a⁻¹ 左乘/右乘的手法（P2）。",
+      "读注 1.3.5，理解交换群中 a∘x=b 与 y∘a=b 同解、非交换群中一般不同（P2）。"
+     ],
+     "goal": "能独立写出单位元唯一性、逆元唯一性、消去律、方程可解性的证明，并理解证明中每一步用到的公理。",
+     "name": "群的基本性质：唯一性与消去律",
+     "practice": [
+      "默写并复述四个定理的证明",
+      "对每个证明标注用到的公理（结合律/单位元/逆元）",
+      "用消去律求解群中的简单方程"
+     ],
+     "psychology_note": "这些证明短小且结构相似，适合作为\"证明模板\"训练；通过标注\"每步用了哪条公理\"建立证明与公理之间的显式联系，强化逻辑链条记忆。",
+     "stage": 3
+    },
+    {
+     "content": [
+      "精读性质 1.3.6：(a⁻¹)⁻¹=a 与穿脱原理 (a∘b)⁻¹=b⁻¹∘a⁻¹ 及其证明（P2）。",
+      "精读注 1.3.7，理解非交换群中一般 (a∘b)⁻¹≠a⁻¹∘b⁻¹，并用 Klein 四元群的具体计算体会（P2）。",
+      "结合例 1.4.2（由 a∘b∘c=e 求 c⁻¹=b⁻¹∘a⁻¹）练习穿脱原理的应用（P2）。"
+     ],
+     "goal": "能正确计算 (a⁻¹)⁻¹ 与 (a∘b)⁻¹，并说明穿脱原理在非交换群中的必要性。",
+     "name": "逆元运算与穿脱原理",
+     "practice": [
+      "计算给定群中 (a∘b)⁻¹、(a∘b∘c)⁻¹ 等表达式",
+      "判断 (a∘b)⁻¹ 与 a⁻¹∘b⁻¹ 何时相等",
+      "用穿脱原理求解由乘积等于单位元导出的逆元表达式"
+     ],
+     "psychology_note": "用\"穿袜子脱鞋子\"的生活类比（教材原文）降低穿脱原理的记忆难度；通过非交换群反例打破\"逆元可随意交换\"的错误直觉。",
+     "stage": 4
+    },
+    {
+     "content": [
+      "精读例 1.4.1（验证 (ℤ₃,+) 是群并求 [2] 的逆元），完整走一遍四步验证（P2）。",
+      "精读例 1.4.2（由 a∘b∘c=e 求 c⁻¹），综合运用逆元唯一性与穿脱原理（P2）。",
+      "回顾例 1.4.3（幺半群反例）与注 1.3.5、1.3.7，整理易混点（P2）。",
+      "读 1.5 本章小结，梳理全章知识结构（P2）。"
+     ],
+     "goal": "能综合运用群公理与基本性质解决具体问题，并辨析群/幺半群、交换/非交换的差异。",
+     "name": "综合应用与反例辨析",
+     "practice": [
+      "完整验证一个具体结构（如 ℤₙ 加法群）是群并求指定元素的逆元",
+      "综合题：已知群中某乘积关系，求某元素的逆元或解方程",
+      "辨析题：判断给定结构是群/幺半群，交换群/非交换群，并说明理由"
+     ],
+     "psychology_note": "通过综合例题把分散的知识点串联成解题流程，形成\"验证—计算—辨析\"的完整能力；用小结做知识结构化收束，促进长时记忆的组块化。",
+     "stage": 5
+    }
+   ],
+   "mastery_criteria": [
+    "能不查书完整写出群的四条公理，并对任一给定结构按封闭性→结合律→单位元→逆元的顺序独立完成验证或给出反例",
+    "能独立写出定理 1.3.1（单位元唯一性）、定理 1.3.2（逆元唯一性）、定理 1.3.3（消去律）、定理 1.3.4（方程可解性）的完整证明，并说明每步用到的公理",
+    "能正确计算 (a∘b)⁻¹ = b⁻¹∘a⁻¹，并能举出非交换群中 (a∘b)⁻¹ ≠ a⁻¹∘b⁻¹ 的例子（或说明为何教材中 Klein 四元群恰好相等）",
+    "能在 ℤₙ 加法群与 Klein 四元群中正确求出任意元素的逆元，并解出形如 a∘x=b 的方程",
+    "能构造至少两个\"不是群\"的反例（一个因逆元不存在、一个因运算不封闭），并准确指出失败的公理",
+    "能区分群与幺半群、交换群与非交换群，并各举一个教材中的例子"
+   ]
+  },
+  "question_pool": {
+   "chapter": "第一章 群的定义与基本性质",
+   "questions": [
+    {
+     "id": "q1",
+     "type": "single_choice",
+     "difficulty": 1,
+     "learning_objective": "能准确判断一个给定运算是否为集合上的二元运算，并说明封闭性是否成立",
+     "prompt": "根据教材定义 1.1.1，下列哪一个运算是其所在集合上的二元运算？",
+     "options": [
+      "自然数集 ℕ 上的减法",
+      "整数集 ℤ 上的除法",
+      "正有理数集 ℚ⁺ 上的普通乘法",
+      "整数集 ℤ 上的减法"
+     ],
+     "answer": "C",
+     "explanation": "二元运算要求对集合中任意两个有序元素，结果仍在该集合中（封闭性）。A：ℕ 上减法不封闭，如 1−2=−1∉ℕ；B：ℤ 上除法不封闭，如 1÷2∉ℤ；D：ℤ 上减法不封闭，如 1−2=−1∉ℤ；C：任意两个正有理数之积仍是正有理数，封闭，故是二元运算。这正是教材例 1.1.2 与例 1.1.3 的对比。",
+     "source_basis": [
+      "第1章 定义1.1.1，P1",
+      "第1章 例1.1.2，P1",
+      "第1章 例1.1.3，P1"
+     ]
+    },
+    {
+     "id": "q2",
+     "type": "single_choice",
+     "difficulty": 1,
+     "learning_objective": "能独立验证一个运算是否满足结合律与交换律，并说明两者互相独立",
+     "prompt": "关于二元运算的结合律与交换律，下列说法正确的是？",
+     "options": [
+      "满足交换律的运算一定满足结合律",
+      "满足结合律的运算一定满足交换律",
+      "结合律与交换律互相独立，一个成立不能推出另一个成立",
+      "只有交换群中的运算才可能满足结合律"
+     ],
+     "answer": "C",
+     "explanation": "教材注 1.1.5 明确指出：交换律不能推出结合律，结合律也不能推出交换律，两者互相独立。A、B 正是教材否定的两种错误推断；D 无依据，结合律是运算本身的性质，与是否为交换群无关。",
+     "source_basis": [
+      "第1章 定义1.1.4，P1",
+      "第1章 注1.1.5，P1"
+     ]
+    },
+    {
+     "id": "q3",
+     "type": "single_choice",
+     "difficulty": 1,
+     "learning_objective": "能完整复述群的四条公理，并按标准程序验证一个结构是否为群",
+     "prompt": "根据教材定义 1.2.1，构成一个群需要满足的四条公理是？",
+     "options": [
+      "封闭性、结合律、交换律、单位元存在",
+      "封闭性、结合律、单位元存在、逆元存在",
+      "结合律、交换律、单位元存在、逆元存在",
+      "封闭性、交换律、单位元存在、逆元存在"
+     ],
+     "answer": "B",
+     "explanation": "群的四条公理为：封闭性、结合律、单位元存在、逆元存在（定义 1.2.1）。交换律不是群公理，满足交换律的群称为交换群（Abel 群）。A、C、D 都把交换律误当作群公理，或漏掉了结合律/封闭性。",
+     "source_basis": [
+      "第1章 定义1.2.1，P1"
+     ]
+    },
+    {
+     "id": "q4",
+     "type": "single_choice",
+     "difficulty": 2,
+     "learning_objective": "能按标准程序验证一个代数结构是否为群，并能构造反例说明某结构不是群",
+     "prompt": "教材例 1.2.2 指出 ℤ 关于普通乘法不是群。其最根本的原因是？",
+     "options": [
+      "乘法不满足结合律",
+      "乘法不满足交换律",
+      "乘法不封闭",
+      "除 ±1 外，多数整数（如 2）的乘法逆元 1/2 不属于 ℤ，即逆元不存在"
+     ],
+     "answer": "D",
+     "explanation": "ℤ 上乘法封闭、结合、交换，且 1 是单位元，但 2 的逆元应为 1/2∉ℤ，逆元不存在，故不是群。A、B、C 均与事实不符（乘法在 ℤ 上封闭、结合、交换）。教材注 1.2.6 指出\"找一个元素说明其逆元不在集合中\"是判断\"不是群\"的常见办法。",
+     "source_basis": [
+      "第1章 例1.2.2，P1",
+      "第1章 注1.2.6，P2"
+     ]
+    },
+    {
+     "id": "q5",
+     "type": "single_choice",
+     "difficulty": 2,
+     "learning_objective": "能正确运用穿脱原理计算逆元，并说明其在非交换群中的必要性",
+     "prompt": "在群 G 中，根据教材性质 1.3.6（穿脱原理），(a∘b)⁻¹ 等于？",
+     "options": [
+      "a⁻¹ ∘ b⁻¹",
+      "b⁻¹ ∘ a⁻¹",
+      "a ∘ b",
+      "b ∘ a"
+     ],
+     "answer": "B",
+     "explanation": "穿脱原理给出 (a∘b)⁻¹ = b⁻¹∘a⁻¹（先穿袜子后穿鞋，脱时顺序相反）。A 是常见错误，注 1.3.7 明确指出非交换群中一般 (a∘b)⁻¹ ≠ a⁻¹∘b⁻¹。C、D 显然错误。",
+     "source_basis": [
+      "第1章 性质1.3.6，P2",
+      "第1章 注1.3.7，P2"
+     ]
+    },
+    {
+     "id": "q6",
+     "type": "multiple_choice",
+     "difficulty": 2,
+     "learning_objective": "能区分群与幺半群、交换群与非交换群，并各举一个教材中的例子",
+     "prompt": "根据教材内容，下列说法正确的有？（多选）",
+     "options": [
+      "ℤ 关于普通加法构成交换群",
+      "ℚ⁺ 关于普通乘法构成交换群",
+      "ℕ∪{0} 关于加法构成群",
+      "满足封闭性、结合律、单位元存在而不满足逆元存在的结构称为幺半群"
+     ],
+     "answer": "ABD",
+     "explanation": "A 正确（例 1.2.2：0 是单位元，a 的逆元是 −a）；B 正确（例 1.2.3：单位元 1，q 的逆元 1/q）；D 正确（定义 1.2.1 后关于幺半群的说明）。C 错误：ℕ∪{0} 对加法除 0 外任何元素没有逆元，是幺半群而非群（例 1.4.3）。",
+     "source_basis": [
+      "第1章 例1.2.2，P1",
+      "第1章 例1.2.3，P1",
+      "第1章 定义1.2.1，P1",
+      "第1章 例1.4.3，P2"
+     ]
+    },
+    {
+     "answer": "B",
+     "difficulty": 2,
+     "explanation": "教材注 1.3.5 指出：在交换群中 a⁻¹∘b = b∘a⁻¹，两个方程同解；在非交换群中两者一般不同，顺序不可随意交换。A 错在把非交换群也当成同解；C 错在把交换群说成不同解；D 无依据。",
+     "id": "q7",
+     "learning_objective": "能求解群中的方程 a∘x=b 与 y∘a=b，并理解交换群与非交换群的差异",
+     "options": [
+      "在任意群中，a∘x=b 与 y∘a=b 的解总是相同",
+      "在交换群中 a∘x=b 与 y∘a=b 同解；在非交换群中两者一般不同",
+      "在交换群中 a∘x=b 与 y∘a=b 的解不同",
+      "方程 a∘x=b 在群中不一定有解"
+     ],
+     "prompt": "根据教材定理 1.3.4 与注 1.3.5，关于群中方程 a∘x=b 与 y∘a=b 的解，下列说法正确的是？",
+     "source_basis": [
+      "第1章 定理1.3.4，P2",
+      "第1章 注1.3.5，P2"
+     ],
+     "type": "single_choice"
+    },
+    {
+     "answer": "C",
+     "difficulty": 2,
+     "explanation": "由 a∘b∘c = e 得 (a∘b)∘c = e，即 c 是 a∘b 的逆元，故 c = (a∘b)⁻¹ = b⁻¹∘a⁻¹（穿脱原理）。题目问的是 c⁻¹：由性质 1.3.6(1)（(x⁻¹)⁻¹ = x）得 c⁻¹ = ((a∘b)⁻¹)⁻¹ = a∘b。验证：c∘(a∘b) = (b⁻¹∘a⁻¹)∘(a∘b) = b⁻¹∘(a⁻¹∘a)∘b = e。A 把逆元顺序写反；B 把 c 误写成 b∘a（顺序错且未取逆）；D 把 c 当成单位元。注意区分：c = b⁻¹∘a⁻¹ 是 c 的表达式，c⁻¹ = a∘b 是 c 的逆元的表达式（对应教材例 1.4.2）。",
+     "id": "q8",
+     "learning_objective": "能正确运用穿脱原理计算逆元",
+     "options": [
+      "c⁻¹ = a⁻¹ ∘ b⁻¹",
+      "c⁻¹ = b ∘ a",
+      "c⁻¹ = a ∘ b",
+      "c⁻¹ = e"
+     ],
+     "prompt": "在群 G 中，已知 a∘b∘c = e（e 为单位元）。根据教材例 1.4.2 的思路，c⁻¹ 等于？",
+     "source_basis": [
+      "第1章 例1.4.2，P2",
+      "第1章 性质1.3.6，P2"
+     ],
+     "type": "single_choice"
+    },
+    {
+     "answer": "A",
+     "difficulty": 2,
+     "explanation": "在 ℤ₃ 中 [1]+[2]=[3]=[0]，故 [2] 的逆元是 [1]（例 1.4.1）。B 的 [2] 是 [1] 的逆元而非 [2] 自身的逆元（[2]+[2]=[4]=[1]≠[0]）；C 的 [0] 是单位元；D 的 [3] 不是 ℤ₃ 中的元素（ℤ₃={[0],[1],[2]}）。",
+     "id": "q9",
+     "learning_objective": "能在具体群（ℤₙ 加法群）中求元素的逆元",
+     "options": [
+      "[1]",
+      "[2]",
+      "[0]",
+      "[3]"
+     ],
+     "prompt": "在模 3 剩余类加法群 (ℤ₃, +) 中，[2] 的逆元是？",
+     "source_basis": [
+      "第1章 例1.4.1，P2",
+      "第1章 例1.2.4，P1"
+     ],
+     "type": "single_choice"
+    },
+    {
+     "answer": "C",
+     "difficulty": 2,
+     "explanation": "Klein 四元群中每个非单位元都以自身为逆元：a∘a=e，b∘b=e，c∘c=e（例 1.2.5）。故 a 的逆元是 a。A 的 e 是单位元；B 的 b、D 的 c 均满足 b∘b=e、c∘c=e，不是 a 的逆元（a∘b=c≠e，a∘c=b≠e）。",
+     "id": "q10",
+     "learning_objective": "能在具体群（Klein 四元群）中求元素的逆元",
+     "options": [
+      "e",
+      "b",
+      "a",
+      "c"
+     ],
+     "prompt": "在教材例 1.2.5 的 Klein 四元群 G={e,a,b,c} 中，元素 a 的逆元是？",
+     "source_basis": [
+      "第1章 例1.2.5，P2"
+     ],
+     "type": "single_choice"
+    },
+    {
+     "answer": "A",
+     "difficulty": 3,
+     "explanation": "设 e 与 e′ 都是单位元。把 e 看作单位元，则 e′ = e∘e′；把 e′ 看作单位元，则 e∘e′ = e。于是 e′ = e∘e′ = e，故单位元唯一（定理 1.3.1）。B 错在把 e′ 当成 e 的逆元（单位元的逆元是自身，但这不是本证明的关键）；C 错在把结论当成前提；D 错在把单位元唯一性与逆元唯一性混为一谈。",
+     "id": "q11",
+     "learning_objective": "能独立写出单位元唯一性的证明，并理解证明中每一步用到的公理",
+     "options": [
+      "设 e 与 e′ 都是单位元，则 e′ = e∘e′ = e，故单位元唯一",
+      "设 e 与 e′ 都是单位元，则 e′ 是 e 的逆元，故 e′ = e",
+      "单位元唯一是群的定义中直接规定的公理，无需证明",
+      "单位元唯一性等价于逆元唯一性，两者是同一个定理"
+     ],
+     "prompt": "教材定理 1.3.1 证明\"群 G 的单位元唯一\"的核心思路是？",
+     "source_basis": [
+      "第1章 定理1.3.1，P2"
+     ],
+     "type": "single_choice"
+    },
+    {
+     "answer": "B",
+     "difficulty": 3,
+     "explanation": "设 b、c 都是 a 的逆元，则 b = b∘e = b∘(a∘c) = (b∘a)∘c = e∘c = c，故 b=c（定理 1.3.2）。关键步骤 b∘(a∘c) = (b∘a)∘c 用的是结合律；b∘e=b 与 e∘c=c 用的是单位元性质；b∘a=e、a∘c=e 用的是逆元定义。A 错在把逆元唯一性当作公理；C 错在把消去律当成前提（消去律本身要用逆元唯一性来证）；D 错在把逆元唯一性归因于交换律（非交换群中逆元也唯一）。",
+     "id": "q12",
+     "learning_objective": "能独立写出逆元唯一性的证明，并理解证明中每一步用到的公理",
+     "options": [
+      "逆元唯一性是群公理中直接规定的，无需证明",
+      "设 b、c 都是 a 的逆元，则 b = b∘e = b∘(a∘c) = (b∘a)∘c = e∘c = c，故 b=c",
+      "逆元唯一性由消去律直接推出，而消去律是公理",
+      "逆元唯一性只在交换群中成立"
+     ],
+     "prompt": "教材定理 1.3.2 证明\"群 G 中每个元素 a 的逆元唯一\"时，关键等式链 b = b∘e = b∘(a∘c) = (b∘a)∘c = e∘c = c 中，中间一步 b∘(a∘c) = (b∘a)∘c 用到了哪条性质？",
+     "source_basis": [
+      "第1章 定理1.3.2，P2"
+     ],
+     "type": "single_choice"
+    },
+    {
+     "answer": "证明：设 a∘b = a∘c。用 a⁻¹ 从左侧乘两端：a⁻¹∘(a∘b) = a⁻¹∘(a∘c)。左边 = (a⁻¹∘a)∘b = e∘b = b（用结合律、逆元定义、单位元性质）；右边 = (a⁻¹∘a)∘c = e∘c = c。故 b = c。右侧情形 b∘a = c∘a 同理，用 a⁻¹ 从右侧乘两端即得 b = c。",
+     "difficulty": 2,
+     "explanation": "本题考察消去律的证明（定理 1.3.3）。关键是\"用逆元从相应一侧乘\"：左消去用 a⁻¹ 左乘，右消去用 a⁻¹ 右乘。常见错误：在非交换群中左右不分，或忘记说明每步用到的公理（结合律、逆元、单位元）。",
+     "id": "q13",
+     "learning_objective": "能独立写出消去律的证明，并理解证明中每一步用到的公理",
+     "prompt": "证明群 G 中的消去律：若 a∘b = a∘c，则 b = c（并说明右侧情形 b∘a = c∘a 同理）。",
+     "source_basis": [
+      "第1章 定理1.3.3，P2"
+     ],
+     "type": "proof"
+    },
+    {
+     "answer": "证明：验证 (a∘b)∘(b⁻¹∘a⁻¹) = a∘(b∘b⁻¹)∘a⁻¹ = a∘e∘a⁻¹ = e（中间用结合律，再用逆元定义与单位元性质）；同理 (b⁻¹∘a⁻¹)∘(a∘b) = b⁻¹∘(a⁻¹∘a)∘b = b⁻¹∘e∘b = e。故 b⁻¹∘a⁻¹ 是 a∘b 的逆元，即 (a∘b)⁻¹ = b⁻¹∘a⁻¹。",
+     "difficulty": 3,
+     "explanation": "本题考察穿脱原理的证明（性质 1.3.6 第 2 条）。要点：需验证左右两侧乘积均为 e，才能确认 b⁻¹∘a⁻¹ 是 a∘b 的逆元。常见错误：写成 (a∘b)⁻¹ = a⁻¹∘b⁻¹（顺序颠倒），这在非交换群中一般不成立（注 1.3.7）。",
+     "id": "q14",
+     "learning_objective": "能正确运用穿脱原理计算逆元，并说明其在非交换群中的必要性",
+     "prompt": "证明群 G 中的穿脱原理：(a∘b)⁻¹ = b⁻¹∘a⁻¹。",
+     "source_basis": [
+      "第1章 性质1.3.6，P2"
+     ],
+     "type": "proof"
+    },
+    {
+     "answer": "验证 (ℤ₃, +) 是群：① 封闭性：任意 [a],[b]∈ℤ₃，[a]+[b]=[a+b] 仍是剩余类，属于 ℤ₃；② 结合律：([a]+[b])+[c]=[a+b+c]=[a]+([b]+[c])；③ 单位元：[0]，因为 [a]+[0]=[a]；④ 逆元：[0]⁻¹=[0]，[1]⁻¹=[2]（[1]+[2]=[3]=[0]），[2]⁻¹=[1]。四条公理均满足，故 (ℤ₃,+) 是群；又因 [a]+[b]=[b]+[a]，它是交换群。[2] 的逆元是 [1]。",
+     "difficulty": 2,
+     "explanation": "本题综合考察群公理的完整验证与逆元计算（例 1.4.1）。常见错误：遗漏逆元存在性的逐元素验证，或把 [2] 的逆元误写为 [2]（[2]+[2]=[4]=[1]≠[0]）。注意 [3]=[0]，所以 [1] 与 [2] 互为逆元。",
+     "id": "q15",
+     "learning_objective": "能按标准程序完整验证一个代数结构是否为群，并在具体群中求元素的逆元",
+     "prompt": "验证 (ℤ₃, +) 构成群，并求 [2] 的逆元。要求按封闭性、结合律、单位元、逆元的顺序逐步说明。",
+     "source_basis": [
+      "第1章 例1.4.1，P2",
+      "第1章 例1.2.4，P1"
+     ],
+     "type": "short_answer"
+    },
+    {
+     "answer": "不是群。理由：ℕ∪{0} 关于加法封闭、满足结合律，0 是单位元，但除 0 外任何元素都没有逆元（例如 1 的逆元应为 −1，而 −1∉ℕ∪{0}），不满足逆元存在公理。因此它只是幺半群（满足封闭性、结合律、单位元存在三条而不满足逆元存在），不是群。",
+     "difficulty": 2,
+     "explanation": "本题考察对\"幺半群 vs 群\"的辨析（例 1.4.3）。常见错误：只检查封闭性与单位元就断定是群，忽略逆元存在性。正确做法是按注 1.2.6 的四步程序逐条检查，发现逆元公理失败即排除。",
+     "id": "q16",
+     "learning_objective": "能区分群与幺半群，并构造反例说明某结构不是群",
+     "prompt": "判断 ℕ∪{0} 关于普通加法是否构成群，并说明理由。若不构成群，指出它属于什么代数结构。",
+     "source_basis": [
+      "第1章 例1.4.3，P2",
+      "第1章 定义1.2.1，P1"
+     ],
+     "type": "short_answer"
+    },
+    {
+     "answer": "正确顺序：① 检查运算是否封闭（任意两元素运算结果是否仍在集合中）→ ② 检查是否满足结合律 → ③ 寻找单位元 e → ④ 验证每个元素都有逆元。任何一步失败就立即排除，不必继续。",
+     "difficulty": 1,
+     "explanation": "本题考察教材注 1.2.6 给出的判断程序。顺序很重要：先排除最易失败、最直观的封闭性，再逐步深入。常见错误：跳过封闭性直接找单位元，或验证了单位元却忘记逐元素验证逆元。",
+     "id": "q17",
+     "learning_objective": "能完整复述群的四条公理，并按标准程序验证一个结构是否为群",
+     "prompt": "请将判断一个代数结构是否为群的标准程序按正确顺序排列，并简述每一步检查的内容。",
+     "source_basis": [
+      "第1章 注1.2.6，P2",
+      "第1章 定义1.2.1，P1"
+     ],
+     "type": "ordering"
+    },
+    {
+     "answer": "两者一般不相等。根据穿脱原理 (a∘b)⁻¹ = b⁻¹∘a⁻¹，而 a⁻¹∘b⁻¹ 是把顺序写反的结果。在非交换群中一般 (a∘b)⁻¹ ≠ a⁻¹∘b⁻¹（注 1.3.7）。教材例 1.2.5 的 Klein 四元群中取 a、b：(a∘b)⁻¹ = c⁻¹ = c，而 a⁻¹∘b⁻¹ = a∘b = c，此处恰好相等，是因为 Klein 四元群是交换群（a∘b = b∘a，从而 b⁻¹∘a⁻¹ = a⁻¹∘b⁻¹）；对非交换的结构则不一定成立。",
+     "difficulty": 3,
+     "explanation": "本题考察对穿脱原理与交换性关系的深层理解（注 1.3.7）。常见错误：误以为 (a∘b)⁻¹ 总等于 a⁻¹∘b⁻¹，或误以为 Klein 四元群中两者相等是因为穿脱原理失效。正确理解：两者相等当且仅当相关元素可交换（如交换群中）。",
+     "id": "q18",
+     "learning_objective": "能正确运用穿脱原理计算逆元，并说明其在非交换群中的必要性",
+     "prompt": "在群 G 中，(a∘b)⁻¹ 与 a⁻¹∘b⁻¹ 是否总相等？请结合教材例 1.2.5 的 Klein 四元群说明你的结论。",
+     "source_basis": [
+      "第1章 性质1.3.6，P2",
+      "第1章 注1.3.7，P2",
+      "第1章 例1.2.5，P2"
+     ],
+     "type": "comparison"
+    }
+   ],
+   "batches": 3,
+   "final": true
+  },
+  "qa_report": {
+   "clear_goal": {
+    "pass": true,
+    "issues": [],
+    "changes": [],
+    "partial": false,
+    "justification": "每个学习阶段都有明确的 goal（如 stage 1「能判断一个给定法则是否为集合上的二元运算，并指出封闭性是否成立」），且 mastery_criteria 给出可检验的过关标准（如「能不查书完整写出群的四条公理，并对任一给定结构按封闭性→结合律→单位元→逆元的顺序独立完成验证或给出反例」）。学生清楚每阶段要掌握什么、达到什么标准算过关。"
+   },
+   "immediate_feedback": {
+    "pass": true,
+    "issues": [],
+    "changes": [],
+    "partial": false,
+    "justification": "全部 18 题均配有 answer 与 explanation，解析不仅给出正确答案，还逐项说明错误选项为何错。例如 q4 解释「A、B、C 均与事实不符（乘法在 ℤ 上封闭、结合、交换）」，q9 解释「[2]+[2]=[4]=[1]≠[0]」，q12 逐条指出 A/C/D 的错误来源。学生可据此自我纠错。"
+   },
+   "real_progress": {
+    "pass": true,
+    "issues": [],
+    "changes": [],
+    "partial": false,
+    "justification": "掌握标准全部为行为化描述（能写出证明、能构造反例、能求逆元、能解方程），无「掌握度+20%」类虚假进度指标。mastery_criteria 明确区分「会什么」（如能独立写出四个定理的证明）与「还不会什么」（common_failure_points 列出 7 类典型失败点及补救）。"
+   },
+   "meaningful_agency": {
+    "pass": true,
+    "issues": [
+     "原方案为严格线性（stage 1→5），缺少显式的自我节奏空间与「已掌握者可跳过」的入口，学生无法根据自身水平选择起点。"
+    ],
+    "changes": [
+     "在 stage 1 的 psychology_note 中补充「本阶段难度最低，学生可在 10 分钟内完成第一组判断并获得反馈，形成第一次成功体验」，明确该阶段作为快速自测入口；配合 mastery_criteria 的行为化标准，学生可据自测结果自行决定是否加速通过 stage 1–2、把精力集中在 stage 3–5 的证明与综合应用上。未人为制造无意义分支。"
+    ],
+    "partial": true,
+    "justification": "本章为数学基础章节，知识依赖严格（二元运算→群公理→基本性质→应用），强行设置多分支会破坏逻辑递进，故保持线性主干。但通过明确各阶段的自测标准与节奏提示，保留了合理的自我节奏空间，符合「线性方案只要有清晰自我节奏空间也算合理」。"
+   },
+   "small_wins": {
+    "pass": true,
+    "issues": [],
+    "changes": [],
+    "partial": false,
+    "justification": "学习过程拆为 5 个小阶段，stage 1 即为最低难度（q1、q2 难度 1，判断二元运算/结合律交换律），学生可在约 10 分钟内完成第一组判断并获得反馈，第一次成功体验来得很快，不会出现「学半小时才有第一次反馈」的情况。"
+   },
+   "challenge_skill_match": {
+    "pass": true,
+    "issues": [],
+    "changes": [],
+    "partial": false,
+    "justification": "难度从基础→中等→挑战渐进：q1–q3、q17 为难度 1（概念判断），q4–q10、q13、q15、q16 为难度 2（应用/计算/辨析），q11、q12、q14、q18 为难度 3（证明与深层理解）。卡住时有补救：common_failure_points 为 7 类典型失败点各给出「重读某定义/例题」的具体补救路径，如「误用 (a∘b)⁻¹=a⁻¹∘b⁻¹ → 重读性质 1.3.6 与注 1.3.7，用 Klein 四元群具体元素计算对比」。"
+   },
+   "curiosity": {
+    "pass": true,
+    "issues": [],
+    "changes": [],
+    "partial": false,
+    "justification": "存在合理的认知牵引且非噱头：stage 1 用正例/反例对比（例 1.1.2 vs 例 1.1.3）制造「运算可能不封闭」的认知冲突；q4 追问「ℤ 对乘法为何不是群」、q18 追问「(a∘b)⁻¹ 与 a⁻¹∘b⁻¹ 是否总相等」并借 Klein 四元群「恰好相等」的反直觉现象牵引对交换性的思考。均为数学内容本身的意外结论，未强行编造剧情。"
+   }
+  },
+  "verification": {
+   "re_solved": true,
+   "verified_count": 18,
+   "issues": [],
+   "overall_pass": true,
+   "coverage_notes": "复查确认 18 题覆盖本章全部 6 个学习目标，无核心知识遗漏：①二元运算与封闭性（q1）；②结合律/交换律独立性（q2）；③群四公理与判断程序（q3、q17）；④群/幺半群、交换/非交换辨析（q4、q6、q16）；⑤四个基本定理证明（q11、q12、q13、q7）；⑥穿脱原理与逆元计算（q5、q8、q14、q18）；⑦具体群求逆元（q9、q10、q15）。题型分布：单选 12、多选 1、证明 2、简答 2、排序 1、比较 1。难度梯度 1→2→3 渐进（难度1：q1、q2、q3、q17；难度2：q4–q10、q13、q15、q16；难度3：q11、q12、q14、q18），无超纲题，无重复题（q5/q8/q14/q18 分别考察套用、应用、证明、与交换性关系辨析，角度各异）。",
+   "notes": "对修正后的题库再次独立重解全部 18 题，逐题核对答案、解析与教材原文（sample_abstract_algebra.md P1–P2）。上一轮唯一问题（q1 选项 B/D 重复）已确认修复：现选项为 A(ℕ减法)、B(ℤ除法)、C(ℚ⁺乘法)、D(ℤ减法)，四者互异，正确答案仍为 C，解析已同步补充 D 的排除理由（ℤ 上减法不封闭，1−2=−1∉ℤ）。其余 17 题答案与解析均正确、自洽，source_basis 引用位置真实支持对应题目。本轮未发现新的 critical 或 minor 问题。修正后题库达到可发布标准，overall_pass=true。",
+   "round": 2,
+   "corrections_applied": 0
+  },
+  "markdown": {
+   "learning_plan.md": "# 学习方案：第一章 群的定义与基本性质\n\n## 学习目标\n- 能准确判断一个给定运算是否为集合上的二元运算，并说明封闭性是否成立（对应定义 1.1.1、例 1.1.2、例 1.1.3）\n- 能独立验证一个运算是否满足结合律与交换律，并说明两者互相独立（对应定义 1.1.4、注 1.1.5、例 1.1.6）\n- 能按标准程序（封闭性→结合律→单位元→逆元）完整验证一个代数结构是否为群，并能构造反例说明某结构不是群（对应定义 1.2.1、注 1.2.6、例 1.2.2、例 1.4.3）\n- 能独立复述并写出单位元唯一性、逆元唯一性、消去律、方程可解性的证明（对应定理 1.3.1–1.3.4）\n- 能正确运用穿脱原理 (a∘b)⁻¹=b⁻¹∘a⁻¹ 计算逆元，并说明其在非交换群中的必要性（对应性质 1.3.6、注 1.3.7）\n- 能在具体群（ℤₙ 加法群、Klein 四元群）中求元素的逆元、解方程（对应例 1.2.4、例 1.2.5、例 1.4.1、例 1.4.2）\n\n## 推荐学习顺序\n\n### 阶段 1：从封闭性建立二元运算的直觉\n**目标**：能判断一个给定法则是否为集合上的二元运算，并指出封闭性是否成立；能区分结合律与交换律。\n\n**内容**：\n- 先读定义 1.1.1（二元运算 = 映射 μ: S×S→S），抓住核心是\"任意两个元素结合后仍在集合中\"即封闭性（P1）。\n- 对照例 1.1.2（ℤ 加法、ℚ⁺ 乘法、Map(X,X) 复合是二元运算）与例 1.1.3（ℕ 减法、ℤ 除法不是二元运算），体会\"不封闭\"的具体表现（P1）。\n- 读定义 1.1.4（结合律、交换律）与注 1.1.5（两者互相独立），明确这是两个独立条件（P1）。\n- 用例 1.1.6（a∘b=a+b+ab）动手验证交换律与结合律（P1）。\n\n**练习**：\n- 判断若干给定法则是否为二元运算，并说明封闭性\n- 对给定运算分别检验结合律与交换律\n- 举出一个满足交换律但不满足结合律（或反之）的运算例子\n\n> 设计意图：先建立\"封闭性\"这一最直观的直觉锚点，用正例/反例对比（例 1.1.2 vs 例 1.1.3）制造认知冲突，让学生先感受\"运算可能不封闭\"，再形式化，符合具体→抽象的学习顺序。本阶段难度最低，学生可在 10 分钟内完成第一组判断并获得反馈，形成第一次成功体验。\n\n### 阶段 2：群的四条公理与判断程序\n**目标**：能完整复述群的四条公理，并按标准程序验证一个结构是否为群；能构造反例说明某结构不是群。\n\n**内容**：\n- 精读定义 1.2.1（群的四条公理：封闭性、结合律、单位元、逆元；交换群/Abel 群；幺半群）（P1）。\n- 读注 1.2.6（判断是否为群的标准程序：封闭→结合→单位元→逆元，任一步失败即排除）（P2）。\n- 对照例 1.2.2（ℤ 对加法是群、对乘法不是群）、例 1.2.3（ℚ⁺ 对乘法是交换群）、例 1.4.3（ℕ∪{0} 对加法是幺半群而非群），理解\"不是群\"的两类典型反例（P1、P2）。\n- 读例 1.2.4（模 n 剩余类加法群 ℤₙ）与例 1.2.5（Klein 四元群运算表），认识两个具体群模型（P1、P2）。\n\n**练习**：\n- 按四步程序验证给定结构是否为群，并写出每一步\n- 找出一个元素说明某结构不是群（逆元不存在或运算不封闭）\n- 判断给定结构是群、幺半群还是都不是，并说明理由\n\n> 设计意图：把\"群\"拆成可操作的检查清单（注 1.2.6），降低抽象定义的认知负荷；用\"找反例\"这一主动任务驱动对公理的深层理解，避免死记硬背。\n\n### 阶段 3：群的基本性质：唯一性与消去律\n**目标**：能独立写出单位元唯一性、逆元唯一性、消去律、方程可解性的证明，并理解证明中每一步用到的公理。\n\n**内容**：\n- 精读定理 1.3.1（单位元唯一性）与定理 1.3.2（逆元唯一性）的证明，注意\"把 e 看作单位元\"与\"用结合律\"的技巧（P2）。\n- 精读定理 1.3.3（消去律）与定理 1.3.4（方程可解性）的证明，注意用 a⁻¹ 左乘/右乘的手法（P2）。\n- 读注 1.3.5，理解交换群中 a∘x=b 与 y∘a=b 同解、非交换群中一般不同（P2）。\n\n**练习**：\n- 默写并复述四个定理的证明\n- 对每个证明标注用到的公理（结合律/单位元/逆元）\n- 用消去律求解群中的简单方程\n\n> 设计意图：这些证明短小且结构相似，适合作为\"证明模板\"训练；通过标注\"每步用了哪条公理\"建立证明与公理之间的显式联系，强化逻辑链条记忆。\n\n### 阶段 4：逆元运算与穿脱原理\n**目标**：能正确计算 (a⁻¹)⁻¹ 与 (a∘b)⁻¹，并说明穿脱原理在非交换群中的必要性。\n\n**内容**：\n- 精读性质 1.3.6：(a⁻¹)⁻¹=a 与穿脱原理 (a∘b)⁻¹=b⁻¹∘a⁻¹ 及其证明（P2）。\n- 精读注 1.3.7，理解非交换群中一般 (a∘b)⁻¹≠a⁻¹∘b⁻¹，并用 Klein 四元群的具体计算体会（P2）。\n- 结合例 1.4.2（由 a∘b∘c=e 求 c⁻¹=b⁻¹∘a⁻¹）练习穿脱原理的应用（P2）。\n\n**练习**：\n- 计算给定群中 (a∘b)⁻¹、(a∘b∘c)⁻¹ 等表达式\n- 判断 (a∘b)⁻¹ 与 a⁻¹∘b⁻¹ 何时相等\n- 用穿脱原理求解由乘积等于单位元导出的逆元表达式\n\n> 设计意图：用\"穿袜子脱鞋子\"的生活类比（教材原文）降低穿脱原理的记忆难度；通过非交换群反例打破\"逆元可随意交换\"的错误直觉。\n\n### 阶段 5：综合应用与反例辨析\n**目标**：能综合运用群公理与基本性质解决具体问题，并辨析群/幺半群、交换/非交换的差异。\n\n**内容**：\n- 精读例 1.4.1（验证 (ℤ₃,+) 是群并求 [2] 的逆元），完整走一遍四步验证（P2）。\n- 精读例 1.4.2（由 a∘b∘c=e 求 c⁻¹），综合运用逆元唯一性与穿脱原理（P2）。\n- 回顾例 1.4.3（幺半群反例）与注 1.3.5、1.3.7，整理易混点（P2）。\n- 读 1.5 本章小结，梳理全章知识结构（P2）。\n\n**练习**：\n- 完整验证一个具体结构（如 ℤₙ 加法群）是群并求指定元素的逆元\n- 综合题：已知群中某乘积关系，求某元素的逆元或解方程\n- 辨析题：判断给定结构是群/幺半群，交换群/非交换群，并说明理由\n\n> 设计意图：通过综合例题把分散的知识点串联成解题流程，形成\"验证—计算—辨析\"的完整能力；用小结做知识结构化收束，促进长时记忆的组块化。\n\n## 掌握标准（真实进度）\n- 能不查书完整写出群的四条公理，并对任一给定结构按封闭性→结合律→单位元→逆元的顺序独立完成验证或给出反例\n- 能独立写出定理 1.3.1（单位元唯一性）、定理 1.3.2（逆元唯一性）、定理 1.3.3（消去律）、定理 1.3.4（方程可解性）的完整证明，并说明每步用到的公理\n- 能正确计算 (a∘b)⁻¹ = b⁻¹∘a⁻¹，并能举出非交换群中 (a∘b)⁻¹ ≠ a⁻¹∘b⁻¹ 的例子（或说明为何教材中 Klein 四元群恰好相等）\n- 能在 ℤₙ 加法群与 Klein 四元群中正确求出任意元素的逆元，并解出形如 a∘x=b 的方程\n- 能构造至少两个\"不是群\"的反例（一个因逆元不存在、一个因运算不封闭），并准确指出失败的公理\n- 能区分群与幺半群、交换群与非交换群，并各举一个教材中的例子\n\n## 常见失败点与补救\n- 失败点：把不封闭的运算当作二元运算（如 ℕ 上的减法）。补救：重读例 1.1.3，逐条检查运算结果是否仍属于原集合。\n- 失败点：验证群时遗漏逆元存在性，误把 ℤ 对乘法当作群。补救：重读例 1.2.2，明确\"找单位元\"与\"验证每个元素有逆元\"是两步，并对照注 1.2.6 的检查清单。\n- 失败点：误以为交换律与结合律可互相推出。补救：重读注 1.1.5，并尝试构造只满足其一的运算例子。\n- 失败点：在非交换群中误用 (a∘b)⁻¹ = a⁻¹∘b⁻¹。补救：重读性质 1.3.6 与注 1.3.7，用 Klein 四元群的具体元素计算对比。\n- 失败点：混淆幺半群与群，忽略幺半群不要求逆元存在。补救：重读例 1.4.3（ℕ∪{0} 对加法），明确幺半群只满足前三条公理。\n- 失败点：在非交换群中把 a∘x=b 与 y∘a=b 的解混为一谈。补救：重读注 1.3.5，注意左乘与右乘的区别。\n- 失败点：模 n 剩余类运算的良定义性理解不清。补救：回溯第零章 0.3 带余除法，理解 [a]+[b]=[a+b] 与代表元选取无关。\n",
+   "questions.md": "# 练习题：第一章 群的定义与基本性质\n\n共 18 题。建议先作答再查看答案。\n\n## 1. [单选·基础] 能准确判断一个给定运算是否为集合上的二元运算，并说明封闭性是否成立\n\n根据教材定义 1.1.1，下列哪一个运算是其所在集合上的二元运算？\n\n- A. 自然数集 ℕ 上的减法\n- B. 整数集 ℤ 上的除法\n- C. 正有理数集 ℚ⁺ 上的普通乘法\n- D. 整数集 ℤ 上的减法\n\n<details><summary>查看答案</summary>\n\n**答案**：C\n\n**解析**：二元运算要求对集合中任意两个有序元素，结果仍在该集合中（封闭性）。A：ℕ 上减法不封闭，如 1−2=−1∉ℕ；B：ℤ 上除法不封闭，如 1÷2∉ℤ；D：ℤ 上减法不封闭，如 1−2=−1∉ℤ；C：任意两个正有理数之积仍是正有理数，封闭，故是二元运算。这正是教材例 1.1.2 与例 1.1.3 的对比。\n\n**教材依据**：第1章 定义1.1.1，P1；第1章 例1.1.2，P1；第1章 例1.1.3，P1\n\n</details>\n\n## 2. [单选·基础] 能独立验证一个运算是否满足结合律与交换律，并说明两者互相独立\n\n关于二元运算的结合律与交换律，下列说法正确的是？\n\n- A. 满足交换律的运算一定满足结合律\n- B. 满足结合律的运算一定满足交换律\n- C. 结合律与交换律互相独立，一个成立不能推出另一个成立\n- D. 只有交换群中的运算才可能满足结合律\n\n<details><summary>查看答案</summary>\n\n**答案**：C\n\n**解析**：教材注 1.1.5 明确指出：交换律不能推出结合律，结合律也不能推出交换律，两者互相独立。A、B 正是教材否定的两种错误推断；D 无依据，结合律是运算本身的性质，与是否为交换群无关。\n\n**教材依据**：第1章 定义1.1.4，P1；第1章 注1.1.5，P1\n\n</details>\n\n## 3. [单选·基础] 能完整复述群的四条公理，并按标准程序验证一个结构是否为群\n\n根据教材定义 1.2.1，构成一个群需要满足的四条公理是？\n\n- A. 封闭性、结合律、交换律、单位元存在\n- B. 封闭性、结合律、单位元存在、逆元存在\n- C. 结合律、交换律、单位元存在、逆元存在\n- D. 封闭性、交换律、单位元存在、逆元存在\n\n<details><summary>查看答案</summary>\n\n**答案**：B\n\n**解析**：群的四条公理为：封闭性、结合律、单位元存在、逆元存在（定义 1.2.1）。交换律不是群公理，满足交换律的群称为交换群（Abel 群）。A、C、D 都把交换律误当作群公理，或漏掉了结合律/封闭性。\n\n**教材依据**：第1章 定义1.2.1，P1\n\n</details>\n\n## 4. [单选·中等] 能按标准程序验证一个代数结构是否为群，并能构造反例说明某结构不是群\n\n教材例 1.2.2 指出 ℤ 关于普通乘法不是群。其最根本的原因是？\n\n- A. 乘法不满足结合律\n- B. 乘法不满足交换律\n- C. 乘法不封闭\n- D. 除 ±1 外，多数整数（如 2）的乘法逆元 1/2 不属于 ℤ，即逆元不存在\n\n<details><summary>查看答案</summary>\n\n**答案**：D\n\n**解析**：ℤ 上乘法封闭、结合、交换，且 1 是单位元，但 2 的逆元应为 1/2∉ℤ，逆元不存在，故不是群。A、B、C 均与事实不符（乘法在 ℤ 上封闭、结合、交换）。教材注 1.2.6 指出\"找一个元素说明其逆元不在集合中\"是判断\"不是群\"的常见办法。\n\n**教材依据**：第1章 例1.2.2，P1；第1章 注1.2.6，P2\n\n</details>\n\n## 5. [单选·中等] 能正确运用穿脱原理计算逆元，并说明其在非交换群中的必要性\n\n在群 G 中，根据教材性质 1.3.6（穿脱原理），(a∘b)⁻¹ 等于？\n\n- A. a⁻¹ ∘ b⁻¹\n- B. b⁻¹ ∘ a⁻¹\n- C. a ∘ b\n- D. b ∘ a\n\n<details><summary>查看答案</summary>\n\n**答案**：B\n\n**解析**：穿脱原理给出 (a∘b)⁻¹ = b⁻¹∘a⁻¹（先穿袜子后穿鞋，脱时顺序相反）。A 是常见错误，注 1.3.7 明确指出非交换群中一般 (a∘b)⁻¹ ≠ a⁻¹∘b⁻¹。C、D 显然错误。\n\n**教材依据**：第1章 性质1.3.6，P2；第1章 注1.3.7，P2\n\n</details>\n\n## 6. [多选·中等] 能区分群与幺半群、交换群与非交换群，并各举一个教材中的例子\n\n根据教材内容，下列说法正确的有？（多选）\n\n- A. ℤ 关于普通加法构成交换群\n- B. ℚ⁺ 关于普通乘法构成交换群\n- C. ℕ∪{0} 关于加法构成群\n- D. 满足封闭性、结合律、单位元存在而不满足逆元存在的结构称为幺半群\n\n<details><summary>查看答案</summary>\n\n**答案**：ABD\n\n**解析**：A 正确（例 1.2.2：0 是单位元，a 的逆元是 −a）；B 正确（例 1.2.3：单位元 1，q 的逆元 1/q）；D 正确（定义 1.2.1 后关于幺半群的说明）。C 错误：ℕ∪{0} 对加法除 0 外任何元素没有逆元，是幺半群而非群（例 1.4.3）。\n\n**教材依据**：第1章 例1.2.2，P1；第1章 例1.2.3，P1；第1章 定义1.2.1，P1；第1章 例1.4.3，P2\n\n</details>\n\n## 7. [单选·中等] 能求解群中的方程 a∘x=b 与 y∘a=b，并理解交换群与非交换群的差异\n\n根据教材定理 1.3.4 与注 1.3.5，关于群中方程 a∘x=b 与 y∘a=b 的解，下列说法正确的是？\n\n- A. 在任意群中，a∘x=b 与 y∘a=b 的解总是相同\n- B. 在交换群中 a∘x=b 与 y∘a=b 同解；在非交换群中两者一般不同\n- C. 在交换群中 a∘x=b 与 y∘a=b 的解不同\n- D. 方程 a∘x=b 在群中不一定有解\n\n<details><summary>查看答案</summary>\n\n**答案**：B\n\n**解析**：教材注 1.3.5 指出：在交换群中 a⁻¹∘b = b∘a⁻¹，两个方程同解；在非交换群中两者一般不同，顺序不可随意交换。A 错在把非交换群也当成同解；C 错在把交换群说成不同解；D 无依据。\n\n**教材依据**：第1章 定理1.3.4，P2；第1章 注1.3.5，P2\n\n</details>\n\n## 8. [单选·中等] 能正确运用穿脱原理计算逆元\n\n在群 G 中，已知 a∘b∘c = e（e 为单位元）。根据教材例 1.4.2 的思路，c⁻¹ 等于？\n\n- A. c⁻¹ = a⁻¹ ∘ b⁻¹\n- B. c⁻¹ = b ∘ a\n- C. c⁻¹ = a ∘ b\n- D. c⁻¹ = e\n\n<details><summary>查看答案</summary>\n\n**答案**：C\n\n**解析**：由 a∘b∘c = e 得 (a∘b)∘c = e，即 c 是 a∘b 的逆元，故 c = (a∘b)⁻¹ = b⁻¹∘a⁻¹（穿脱原理）。题目问的是 c⁻¹：由性质 1.3.6(1)（(x⁻¹)⁻¹ = x）得 c⁻¹ = ((a∘b)⁻¹)⁻¹ = a∘b。验证：c∘(a∘b) = (b⁻¹∘a⁻¹)∘(a∘b) = b⁻¹∘(a⁻¹∘a)∘b = e。A 把逆元顺序写反；B 把 c 误写成 b∘a（顺序错且未取逆）；D 把 c 当成单位元。注意区分：c = b⁻¹∘a⁻¹ 是 c 的表达式，c⁻¹ = a∘b 是 c 的逆元的表达式（对应教材例 1.4.2）。\n\n**教材依据**：第1章 例1.4.2，P2；第1章 性质1.3.6，P2\n\n</details>\n\n## 9. [单选·中等] 能在具体群（ℤₙ 加法群）中求元素的逆元\n\n在模 3 剩余类加法群 (ℤ₃, +) 中，[2] 的逆元是？\n\n- A. [1]\n- B. [2]\n- C. [0]\n- D. [3]\n\n<details><summary>查看答案</summary>\n\n**答案**：A\n\n**解析**：在 ℤ₃ 中 [1]+[2]=[3]=[0]，故 [2] 的逆元是 [1]（例 1.4.1）。B 的 [2] 是 [1] 的逆元而非 [2] 自身的逆元（[2]+[2]=[4]=[1]≠[0]）；C 的 [0] 是单位元；D 的 [3] 不是 ℤ₃ 中的元素（ℤ₃={[0],[1],[2]}）。\n\n**教材依据**：第1章 例1.4.1，P2；第1章 例1.2.4，P1\n\n</details>\n\n## 10. [单选·中等] 能在具体群（Klein 四元群）中求元素的逆元\n\n在教材例 1.2.5 的 Klein 四元群 G={e,a,b,c} 中，元素 a 的逆元是？\n\n- A. e\n- B. b\n- C. a\n- D. c\n\n<details><summary>查看答案</summary>\n\n**答案**：C\n\n**解析**：Klein 四元群中每个非单位元都以自身为逆元：a∘a=e，b∘b=e，c∘c=e（例 1.2.5）。故 a 的逆元是 a。A 的 e 是单位元；B 的 b、D 的 c 均满足 b∘b=e、c∘c=e，不是 a 的逆元（a∘b=c≠e，a∘c=b≠e）。\n\n**教材依据**：第1章 例1.2.5，P2\n\n</details>\n\n## 11. [单选·挑战] 能独立写出单位元唯一性的证明，并理解证明中每一步用到的公理\n\n教材定理 1.3.1 证明\"群 G 的单位元唯一\"的核心思路是？\n\n- A. 设 e 与 e′ 都是单位元，则 e′ = e∘e′ = e，故单位元唯一\n- B. 设 e 与 e′ 都是单位元，则 e′ 是 e 的逆元，故 e′ = e\n- C. 单位元唯一是群的定义中直接规定的公理，无需证明\n- D. 单位元唯一性等价于逆元唯一性，两者是同一个定理\n\n<details><summary>查看答案</summary>\n\n**答案**：A\n\n**解析**：设 e 与 e′ 都是单位元。把 e 看作单位元，则 e′ = e∘e′；把 e′ 看作单位元，则 e∘e′ = e。于是 e′ = e∘e′ = e，故单位元唯一（定理 1.3.1）。B 错在把 e′ 当成 e 的逆元（单位元的逆元是自身，但这不是本证明的关键）；C 错在把结论当成前提；D 错在把单位元唯一性与逆元唯一性混为一谈。\n\n**教材依据**：第1章 定理1.3.1，P2\n\n</details>\n\n## 12. [单选·挑战] 能独立写出逆元唯一性的证明，并理解证明中每一步用到的公理\n\n教材定理 1.3.2 证明\"群 G 中每个元素 a 的逆元唯一\"时，关键等式链 b = b∘e = b∘(a∘c) = (b∘a)∘c = e∘c = c 中，中间一步 b∘(a∘c) = (b∘a)∘c 用到了哪条性质？\n\n- A. 逆元唯一性是群公理中直接规定的，无需证明\n- B. 设 b、c 都是 a 的逆元，则 b = b∘e = b∘(a∘c) = (b∘a)∘c = e∘c = c，故 b=c\n- C. 逆元唯一性由消去律直接推出，而消去律是公理\n- D. 逆元唯一性只在交换群中成立\n\n<details><summary>查看答案</summary>\n\n**答案**：B\n\n**解析**：设 b、c 都是 a 的逆元，则 b = b∘e = b∘(a∘c) = (b∘a)∘c = e∘c = c，故 b=c（定理 1.3.2）。关键步骤 b∘(a∘c) = (b∘a)∘c 用的是结合律；b∘e=b 与 e∘c=c 用的是单位元性质；b∘a=e、a∘c=e 用的是逆元定义。A 错在把逆元唯一性当作公理；C 错在把消去律当成前提（消去律本身要用逆元唯一性来证）；D 错在把逆元唯一性归因于交换律（非交换群中逆元也唯一）。\n\n**教材依据**：第1章 定理1.3.2，P2\n\n</details>\n\n## 13. [证明·中等] 能独立写出消去律的证明，并理解证明中每一步用到的公理\n\n证明群 G 中的消去律：若 a∘b = a∘c，则 b = c（并说明右侧情形 b∘a = c∘a 同理）。\n\n<details><summary>查看答案</summary>\n\n**答案**：证明：设 a∘b = a∘c。用 a⁻¹ 从左侧乘两端：a⁻¹∘(a∘b) = a⁻¹∘(a∘c)。左边 = (a⁻¹∘a)∘b = e∘b = b（用结合律、逆元定义、单位元性质）；右边 = (a⁻¹∘a)∘c = e∘c = c。故 b = c。右侧情形 b∘a = c∘a 同理，用 a⁻¹ 从右侧乘两端即得 b = c。\n\n**解析**：本题考察消去律的证明（定理 1.3.3）。关键是\"用逆元从相应一侧乘\"：左消去用 a⁻¹ 左乘，右消去用 a⁻¹ 右乘。常见错误：在非交换群中左右不分，或忘记说明每步用到的公理（结合律、逆元、单位元）。\n\n**教材依据**：第1章 定理1.3.3，P2\n\n</details>\n\n## 14. [证明·挑战] 能正确运用穿脱原理计算逆元，并说明其在非交换群中的必要性\n\n证明群 G 中的穿脱原理：(a∘b)⁻¹ = b⁻¹∘a⁻¹。\n\n<details><summary>查看答案</summary>\n\n**答案**：证明：验证 (a∘b)∘(b⁻¹∘a⁻¹) = a∘(b∘b⁻¹)∘a⁻¹ = a∘e∘a⁻¹ = e（中间用结合律，再用逆元定义与单位元性质）；同理 (b⁻¹∘a⁻¹)∘(a∘b) = b⁻¹∘(a⁻¹∘a)∘b = b⁻¹∘e∘b = e。故 b⁻¹∘a⁻¹ 是 a∘b 的逆元，即 (a∘b)⁻¹ = b⁻¹∘a⁻¹。\n\n**解析**：本题考察穿脱原理的证明（性质 1.3.6 第 2 条）。要点：需验证左右两侧乘积均为 e，才能确认 b⁻¹∘a⁻¹ 是 a∘b 的逆元。常见错误：写成 (a∘b)⁻¹ = a⁻¹∘b⁻¹（顺序颠倒），这在非交换群中一般不成立（注 1.3.7）。\n\n**教材依据**：第1章 性质1.3.6，P2\n\n</details>\n\n## 15. [简答·中等] 能按标准程序完整验证一个代数结构是否为群，并在具体群中求元素的逆元\n\n验证 (ℤ₃, +) 构成群，并求 [2] 的逆元。要求按封闭性、结合律、单位元、逆元的顺序逐步说明。\n\n<details><summary>查看答案</summary>\n\n**答案**：验证 (ℤ₃, +) 是群：① 封闭性：任意 [a],[b]∈ℤ₃，[a]+[b]=[a+b] 仍是剩余类，属于 ℤ₃；② 结合律：([a]+[b])+[c]=[a+b+c]=[a]+([b]+[c])；③ 单位元：[0]，因为 [a]+[0]=[a]；④ 逆元：[0]⁻¹=[0]，[1]⁻¹=[2]（[1]+[2]=[3]=[0]），[2]⁻¹=[1]。四条公理均满足，故 (ℤ₃,+) 是群；又因 [a]+[b]=[b]+[a]，它是交换群。[2] 的逆元是 [1]。\n\n**解析**：本题综合考察群公理的完整验证与逆元计算（例 1.4.1）。常见错误：遗漏逆元存在性的逐元素验证，或把 [2] 的逆元误写为 [2]（[2]+[2]=[4]=[1]≠[0]）。注意 [3]=[0]，所以 [1] 与 [2] 互为逆元。\n\n**教材依据**：第1章 例1.4.1，P2；第1章 例1.2.4，P1\n\n</details>\n\n## 16. [简答·中等] 能区分群与幺半群，并构造反例说明某结构不是群\n\n判断 ℕ∪{0} 关于普通加法是否构成群，并说明理由。若不构成群，指出它属于什么代数结构。\n\n<details><summary>查看答案</summary>\n\n**答案**：不是群。理由：ℕ∪{0} 关于加法封闭、满足结合律，0 是单位元，但除 0 外任何元素都没有逆元（例如 1 的逆元应为 −1，而 −1∉ℕ∪{0}），不满足逆元存在公理。因此它只是幺半群（满足封闭性、结合律、单位元存在三条而不满足逆元存在），不是群。\n\n**解析**：本题考察对\"幺半群 vs 群\"的辨析（例 1.4.3）。常见错误：只检查封闭性与单位元就断定是群，忽略逆元存在性。正确做法是按注 1.2.6 的四步程序逐条检查，发现逆元公理失败即排除。\n\n**教材依据**：第1章 例1.4.3，P2；第1章 定义1.2.1，P1\n\n</details>\n\n## 17. [排序·基础] 能完整复述群的四条公理，并按标准程序验证一个结构是否为群\n\n请将判断一个代数结构是否为群的标准程序按正确顺序排列，并简述每一步检查的内容。\n\n<details><summary>查看答案</summary>\n\n**答案**：正确顺序：① 检查运算是否封闭（任意两元素运算结果是否仍在集合中）→ ② 检查是否满足结合律 → ③ 寻找单位元 e → ④ 验证每个元素都有逆元。任何一步失败就立即排除，不必继续。\n\n**解析**：本题考察教材注 1.2.6 给出的判断程序。顺序很重要：先排除最易失败、最直观的封闭性，再逐步深入。常见错误：跳过封闭性直接找单位元，或验证了单位元却忘记逐元素验证逆元。\n\n**教材依据**：第1章 注1.2.6，P2；第1章 定义1.2.1，P1\n\n</details>\n\n## 18. [对比·挑战] 能正确运用穿脱原理计算逆元，并说明其在非交换群中的必要性\n\n在群 G 中，(a∘b)⁻¹ 与 a⁻¹∘b⁻¹ 是否总相等？请结合教材例 1.2.5 的 Klein 四元群说明你的结论。\n\n<details><summary>查看答案</summary>\n\n**答案**：两者一般不相等。根据穿脱原理 (a∘b)⁻¹ = b⁻¹∘a⁻¹，而 a⁻¹∘b⁻¹ 是把顺序写反的结果。在非交换群中一般 (a∘b)⁻¹ ≠ a⁻¹∘b⁻¹（注 1.3.7）。教材例 1.2.5 的 Klein 四元群中取 a、b：(a∘b)⁻¹ = c⁻¹ = c，而 a⁻¹∘b⁻¹ = a∘b = c，此处恰好相等，是因为 Klein 四元群是交换群（a∘b = b∘a，从而 b⁻¹∘a⁻¹ = a⁻¹∘b⁻¹）；对非交换的结构则不一定成立。\n\n**解析**：本题考察对穿脱原理与交换性关系的深层理解（注 1.3.7）。常见错误：误以为 (a∘b)⁻¹ 总等于 a⁻¹∘b⁻¹，或误以为 Klein 四元群中两者相等是因为穿脱原理失效。正确理解：两者相等当且仅当相关元素可交换（如交换群中）。\n\n**教材依据**：第1章 性质1.3.6，P2；第1章 注1.3.7，P2；第1章 例1.2.5，P2\n\n</details>\n",
+   "final_report.md": "# 最终报告：第一章 群的定义与基本性质\n\n## 目标章节\n- 用户目标：第一章\n\n## 资料来源\n- sample_abstract_algebra.md P1 第一章 1.1 二元运算（定义 1.1.1、例 1.1.2、例 1.1.3、定义 1.1.4、注 1.1.5、例 1.1.6）\n- sample_abstract_algebra.md P1 第一章 1.2 群的定义（定义 1.2.1、例 1.2.2、例 1.2.3、例 1.2.4）\n- sample_abstract_algebra.md P2 第一章 1.2 群的定义（例 1.2.5 Klein 四元群、注 1.2.6）\n- sample_abstract_algebra.md P2 第一章 1.3 群的基本性质（定理 1.3.1–1.3.4、注 1.3.5、性质 1.3.6、注 1.3.7）\n- sample_abstract_algebra.md P2 第一章 1.4 简单应用与例题（例 1.4.1、例 1.4.2、例 1.4.3）\n- sample_abstract_algebra.md P2 第一章 1.5 本章小结\n- sample_abstract_algebra.md P1 第零章 0.1 集合与映射、0.2 等价关系与分类、0.3 整数的整除与带余除法（本章前置概念，同文件 P1）\n\n## 核心知识\n\n- **二元运算**：设 S 是一个非空集合。如果映射 μ : S × S → S，即对 S 中任意两个有序元素 (a, b)，都有 S 中唯一确定的元素 μ(a, b) 与之对应，则称 μ 是 S 上的一个二元运算，简记为 ab（乘法记法）或 a + b（加法记法）。换言之，二元运算就是\"集合中任意两个元素结合之后仍在集合中\"的法则，这一性质称为运算的封闭性。（sample_abstract_algebra.md P1）\n- **结合律**：设 ∘ 是集合 S 上的二元运算。若对任意 a, b, c ∈ S 都有 (a ∘ b) ∘ c = a ∘ (b ∘ c)，则称 ∘ 满足结合律。（sample_abstract_algebra.md P1）\n- **交换律**：设 ∘ 是集合 S 上的二元运算。若对任意 a, b ∈ S 都有 a ∘ b = b ∘ a，则称 ∘ 满足交换律。（sample_abstract_algebra.md P1）\n- **群**：设 G 是一个非空集合，∘ 是 G 上的一个二元运算。如果下列四个条件（群公理）都成立，则称 (G, ∘) 是一个群：1. 封闭性：对任意 a, b ∈ G，a ∘ b ∈ G；2. 结合律：对任意 a, b, c ∈ G，(a ∘ b) ∘ c = a ∘ (b ∘ c)；3. 单位元存在：存在元素 e ∈ G，使得对任意 a ∈ G，e ∘ a = a ∘ e = a；4. 逆元存在：对任意 a ∈ G，存在元素 b ∈ G，使 a ∘ b = b ∘ a = e。（sample_abstract_algebra.md P1）\n- **交换群（Abel 群）**：若群 G 还满足交换律（对任意 a, b ∈ G，a ∘ b = b ∘ a），则称 G 是一个交换群（Abel 群）。（sample_abstract_algebra.md P1）\n- **幺半群**：满足群公理中条件 1（封闭性）、2（结合律）、3（单位元存在）而不满足条件 4（逆元存在）的代数结构称为幺半群。（sample_abstract_algebra.md P1）\n- **定理/性质 注 1.1.5（结合律与交换律的独立性）**：当运算满足结合律时，a₁a₂⋯aₙ 不加括号有意义。但交换律不能推出结合律，结合律也不能推出交换律：两者互相独立。\n- **定理/性质 注 1.2.6（判断一个结构是不是群的标准程序）**：按顺序检查四件事：是否封闭 → 是否满足结合律 → 找单位元 → 验证每个元素有逆元。任何一步失败就立刻排除。判断\"不是群\"最常见的办法是：找一个具体元素，说明它的逆元不在集合中（如例 1.2.2 中的 ℤ 对乘法），或说明运算不封闭（如 ℕ 对减法）。\n- **定理/性质 定理 1.3.1（单位元的唯一性）**：群 G 的单位元是唯一的。证明：设 e 与 e′ 都是 G 的单位元。把 e 看作单位元，则有 e′ = e ∘ e′；把 e′ 看作单位元，又有 e ∘ e′ = e。于是 e′ = e ∘ e′ = e。\n- **定理/性质 定理 1.3.2（逆元的唯一性）**：群 G 中每个元素 a 的逆元是唯一的，记作 a⁻¹。证明：设 b 与 c 都是 a 的逆元，则 b = b ∘ e = b ∘ (a ∘ c) = (b ∘ a) ∘ c = e ∘ c = c，所以 b = c。\n- **定理/性质 定理 1.3.3（消去律）**：在群 G 中，若 a ∘ b = a ∘ c 或 b ∘ a = c ∘ a，则 b = c。证明：用 a⁻¹ 从左侧乘 a∘b = a∘c 两端，得 a⁻¹ ∘ (a ∘ b) = (a⁻¹ ∘ a) ∘ b = e ∘ b = b，同理右端为 c，故 b = c；右侧情形同理。\n- **定理/性质 定理 1.3.4（方程的可解性）**：在群 G 中，方程 a ∘ x = b 与 y ∘ a = b 都有唯一解：x = a⁻¹ ∘ b，y = b ∘ a⁻¹。证明：代入验证 a ∘ (a⁻¹ ∘ b) = (a ∘ a⁻¹) ∘ b = e ∘ b = b，故 x = a⁻¹∘b 是解；由消去律知解唯一；另一方程同理。\n- **定理/性质 注 1.3.5（交换群中两方程同解）**：在交换群中 a⁻¹ ∘ b = b ∘ a⁻¹，两个方程同解；在非交换群中两者一般不同，顺序不可随意交换。\n- **定理/性质 性质 1.3.6（逆元的性质）**：在群 G 中：1. (a⁻¹)⁻¹ = a；2. (a ∘ b)⁻¹ = b⁻¹ ∘ a⁻¹（穿脱原理：先穿袜子后穿鞋，脱的时候顺序相反）。证明：第 1 条由逆元唯一性即得；第 2 条验证 (a∘b) ∘ (b⁻¹∘a⁻¹) = a ∘ (b ∘ b⁻¹) ∘ a⁻¹ = a ∘ e ∘ a⁻¹ = e，同理反向也等于 e，故 b⁻¹∘a⁻¹ 是 a∘b 的逆元。\n- **定理/性质 注 1.3.7（穿脱原理在非交换群中的重要性）**：穿脱原理在非交换群中尤其重要：一般 (a∘b)⁻¹ ≠ a⁻¹ ∘ b⁻¹。例如 Klein 四元群中取 a, b：(a∘b)⁻¹ = c⁻¹ = c，而 a⁻¹∘b⁻¹ = a∘b = c，此处恰好相等是因为该群是交换群；对非交换的结构则不一定成立。\n\n## 推荐学习顺序（摘要）\n\n1. **从封闭性建立二元运算的直觉** —— 能判断一个给定法则是否为集合上的二元运算，并指出封闭性是否成立；能区分结合律与交换律。\n2. **群的四条公理与判断程序** —— 能完整复述群的四条公理，并按标准程序验证一个结构是否为群；能构造反例说明某结构不是群。\n3. **群的基本性质：唯一性与消去律** —— 能独立写出单位元唯一性、逆元唯一性、消去律、方程可解性的证明，并理解证明中每一步用到的公理。\n4. **逆元运算与穿脱原理** —— 能正确计算 (a⁻¹)⁻¹ 与 (a∘b)⁻¹，并说明穿脱原理在非交换群中的必要性。\n5. **综合应用与反例辨析** —— 能综合运用群公理与基本性质解决具体问题，并辨析群/幺半群、交换/非交换的差异。\n\n## 练习结构\n\n- 题目总数：18（基础 4 / 中等 10 / 挑战 4）\n\n## 7 条学习心理学原则 QA\n\n- **1. CLEAR GOAL（目标明确）**：✅ 通过\n- **2. IMMEDIATE FEEDBACK（即时反馈）**：✅ 通过\n- **3. REAL PROGRESS（真实进度）**：✅ 通过\n- **4. MEANINGFUL AGENCY（有意义的选择）**：✅ 通过（部分应用）\n  - 问题：原方案为严格线性（stage 1→5），缺少显式的自我节奏空间与「已掌握者可跳过」的入口，学生无法根据自身水平选择起点。\n  - 修改：在 stage 1 的 psychology_note 中补充「本阶段难度最低，学生可在 10 分钟内完成第一组判断并获得反馈，形成第一次成功体验」，明确该阶段作为快速自测入口；配合 mastery_criteria 的行为化标准，学生可据自测结果自行决定是否加速通过 stage 1–2、把精力集中在 stage 3–5 的证明与综合应用上。未人为制造无意义分支。\n  - 说明：本章为数学基础章节，知识依赖严格（二元运算→群公理→基本性质→应用），强行设置多分支会破坏逻辑递进，故保持线性主干。但通过明确各阶段的自测标准与节奏提示，保留了合理的自我节奏空间，符合「线性方案只要有清晰自我节奏空间也算合理」。\n- **5. SMALL WINS（小步成功）**：✅ 通过\n- **6. CHALLENGE–SKILL MATCH（难度匹配）**：✅ 通过\n- **7. CURIOSITY（认知牵引）**：✅ 通过\n\n## 最终验证结果\n\n- 独立重解题数：18\n- 发现问题：0 个\n- 总体结论：✅ 通过\n\n---\n*由 Chapter Learning Agent 自动生成（模型：），内容以教材为最终依据。*"
+  },
+  "files": {
+   "workspace": [
+    "chapter_context.json",
+    "learning_plan.json",
+    "question_pool.json",
+    "qa_report.json",
+    "verification.json",
+    "state.json"
+   ],
+   "output": [
+    "learning_plan.md",
+    "questions.md",
+    "final_report.md"
+   ]
+  }
+ }
+}

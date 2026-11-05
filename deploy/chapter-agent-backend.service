@@ -1,0 +1,15 @@
+# /etc/systemd/system/chapter-agent-backend.service
+[Unit]
+Description=Chapter Learning Agent Backend (FastAPI)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/chapter-agent/backend
+ExecStart=/opt/chapter-agent/backend/venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1
+Restart=always
+RestartSec=3
+# .env 放在 /opt/chapter-agent/.env（由 app/config.py 加载，不随部署包分发）
+
+[Install]
+WantedBy=multi-user.target

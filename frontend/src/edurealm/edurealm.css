@@ -1,0 +1,1025 @@
+/* ═══ EduRealm 游戏样式（作用域化拷贝：所有规则限定在 .game-root 下，
+   避免与 Chapter Learning Agent 页面样式互相污染。源：edurealm/src/styles.css）═══ */
+.game-root {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: #06080f;
+  color: #e9e7df;
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  overflow: hidden;
+}
+.game-root button { font-family: inherit; }
+/* ═══════════════════════════════════════════════════════════
+   EduRealm — 暗色奇幻学术风
+   克制、神秘、游戏感；禁俗气渐变与霓虹。
+   ═══════════════════════════════════════════════════════════ */
+.game-root {
+  --bg0: #06080f;
+  --bg1: #0b0e1a;
+  --panel: rgba(13, 17, 30, 0.88);
+  --panel-border: rgba(255, 255, 255, 0.09);
+  --text: #e9e7df;
+  --muted: #98a0b3;
+  --dim: #6b7288;
+  --gold: #d8b36a;
+  --gold-soft: rgba(216, 179, 106, 0.16);
+  --teal: #57c8b4;
+  --teal-soft: rgba(87, 200, 180, 0.14);
+  --red: #e06a55;
+  --red-soft: rgba(224, 106, 85, 0.14);
+  --violet: #8d7ae0;
+  --font-body: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-display: 'Cinzel', 'Times New Roman', serif;
+  --radius: 12px;
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+}
+.game-root .app {
+  position: fixed;
+  inset: 0;
+}
+.game-root .game-canvas {
+  position: absolute;
+  inset: 0;
+}
+.game-root .game-canvas canvas {
+  display: block;
+}
+/* 画面四角暗角，让 canvas 与 UI 融为一体 */
+.game-root .vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 52%, rgba(4, 6, 12, 0.55) 100%);
+  z-index: 5;
+}
+.game-root .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  font-size: 14px;
+}
+.game-root .overlay > * {
+  pointer-events: auto;
+}
+/* ── 通用组件 ─────────────────────────────────────────── */
+.game-root .panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+.game-root .btn {
+  appearance: none;
+  border: 1px solid var(--panel-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.12s, color 0.15s;
+  letter-spacing: 0.02em;
+}
+.game-root .btn:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+.game-root .btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+.game-root .btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.game-root .btn-primary {
+  border-color: rgba(216, 179, 106, 0.55);
+  color: var(--gold);
+  background: var(--gold-soft);
+}
+.game-root .btn-primary:hover:not(:disabled) {
+  background: rgba(216, 179, 106, 0.26);
+  border-color: var(--gold);
+}
+.game-root .btn-ghost {
+  background: transparent;
+  color: var(--muted);
+}
+.game-root .btn-ghost:hover:not(:disabled) {
+  color: var(--text);
+}
+.game-root .btn-lg {
+  font-size: 17px;
+  padding: 14px 44px;
+  letter-spacing: 0.14em;
+}
+.game-root .btn-sm {
+  font-size: 12.5px;
+  padding: 6px 12px;
+}
+.game-root .btn-block {
+  width: 100%;
+  margin-top: 14px;
+}
+.game-root .icon-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.game-root .icon-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+.game-root .badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid;
+}
+.game-root .badge-normal {
+  color: var(--teal);
+  border-color: rgba(87, 200, 180, 0.5);
+  background: var(--teal-soft);
+}
+.game-root .badge-elite {
+  color: var(--violet);
+  border-color: rgba(141, 122, 224, 0.5);
+  background: rgba(141, 122, 224, 0.14);
+}
+.game-root .badge-boss {
+  color: #ff9a85;
+  border-color: rgba(224, 106, 85, 0.6);
+  background: var(--red-soft);
+}
+/* ── Landing ──────────────────────────────────────────── */
+.game-root .landing {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(140, 190, 110, 0.1), transparent 60%),
+    radial-gradient(900px 500px at 80% 110%, rgba(216, 179, 106, 0.07), transparent 60%),
+    linear-gradient(180deg, #0a0f0a 0%, #101a12 55%, #0a0d09 100%);
+  z-index: 40;
+  animation: landing-in 0.7s ease both;
+}
+@keyframes landing-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.game-root .landing-rune {
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  border: 1px solid rgba(216, 179, 106, 0.16);
+  border-radius: 50%;
+  animation: rune-spin 46s linear infinite;
+}
+.game-root .landing-rune::before {
+  content: '';
+  position: absolute;
+  inset: 44px;
+  border: 1px dashed rgba(216, 179, 106, 0.12);
+  border-radius: 50%;
+}
+.game-root .landing-rune::after {
+  content: '';
+  position: absolute;
+  inset: 120px;
+  border: 1px solid rgba(87, 200, 180, 0.1);
+  border-radius: 50%;
+}
+@keyframes rune-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.game-root .landing-inner {
+  position: relative;
+  text-align: center;
+  max-width: 640px;
+  padding: 0 24px;
+}
+.game-root .landing-overline {
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--dim);
+  margin-bottom: 26px;
+}
+.game-root .landing-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 64px;
+  margin: 0 0 10px;
+  color: var(--text);
+  text-shadow: 0 4px 40px rgba(216, 179, 106, 0.18);
+  letter-spacing: 0.04em;
+}
+.game-root .landing-sub {
+  color: var(--gold);
+  font-size: 17px;
+  margin: 0 0 18px;
+  letter-spacing: 0.35em;
+}
+.game-root .landing-desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 auto 40px;
+  max-width: 480px;
+}
+.game-root .landing-reset {
+  display: block;
+  margin: 18px auto 0;
+}
+.game-root .landing-foot {
+  margin-top: 56px;
+  font-size: 12px;
+  color: var(--dim);
+  letter-spacing: 0.08em;
+}
+/* ── HUD ──────────────────────────────────────────────── */
+.game-root .hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  pointer-events: none;
+}
+.game-root .hud-left, .game-root .hud-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+.game-root .hud-glyph {
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  box-shadow: 0 0 12px rgba(216, 179, 106, 0.7);
+}
+.game-root .hud-world {
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.game-root .hud-sub {
+  font-size: 12px;
+  color: var(--dim);
+  margin-left: 2px;
+}
+.game-root .hud-chip {
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid var(--panel-border);
+  background: rgba(10, 14, 26, 0.7);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+.game-root .hud-xp {
+  color: var(--gold);
+  border-color: rgba(216, 179, 106, 0.35);
+}
+.game-root .xp-glyph {
+  font-size: 9px;
+}
+.game-root .hud-btn {
+  font-size: 12px;
+  color: var(--muted);
+  background: rgba(10, 14, 26, 0.7);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.game-root .hud-btn:hover {
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+/* ── 关卡信息面板 ─────────────────────────────────────── */
+.game-root .level-panel {
+  position: absolute;
+  right: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 340px;
+  padding: 20px 22px;
+  animation: slide-in 0.25s ease both;
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+.game-root .panel-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.game-root .panel-head .icon-btn {
+  margin-left: auto;
+}
+.game-root .diff-pips {
+  display: inline-flex;
+  gap: 4px;
+}
+.game-root .pip {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  opacity: 0.85;
+}
+.game-root .level-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  margin: 14px 0 6px;
+  letter-spacing: 0.03em;
+}
+.game-root .level-desc {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+.game-root .level-enemy {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+.game-root .enemy-label {
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.2em;
+}
+.game-root .enemy-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+.game-root .enemy-title {
+  font-size: 12px;
+  color: var(--muted);
+}
+.game-root .rule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.game-root .rule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12.5px;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 7px;
+}
+.game-root .rule-item em {
+  font-style: normal;
+  color: var(--dim);
+}
+.game-root .rule-item b {
+  color: var(--text);
+}
+.game-root .mech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.game-root .mech {
+  font-size: 11.5px;
+  color: var(--teal);
+  border: 1px solid rgba(87, 200, 180, 0.3);
+  background: var(--teal-soft);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+.game-root .mech-boss {
+  color: #ff9a85;
+  border-color: rgba(224, 106, 85, 0.4);
+  background: var(--red-soft);
+}
+.game-root .q-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.game-root .q-bonus {
+  color: var(--gold);
+}
+/* ── 战斗 UI ──────────────────────────────────────────── */
+.game-root .battle-ui {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.game-root .battle-ui > * {
+  pointer-events: auto;
+}
+.game-root .battle-top {
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  pointer-events: none;
+}
+.game-root .battle-level-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.game-root .phase-badge {
+  animation: phase-pulse 1.6s ease-in-out infinite;
+}
+@keyframes phase-pulse {
+  50% {
+    box-shadow: 0 0 18px rgba(224, 106, 85, 0.35);
+  }
+}
+.game-root .q-pips {
+  display: flex;
+  gap: 6px;
+}
+.game-root .pip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  transition: background 0.3s;
+}
+.game-root .pip-dot.done {
+  background: rgba(87, 200, 180, 0.7);
+}
+.game-root .pip-dot.cur {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(216, 179, 106, 0.8);
+}
+.game-root .combo-tag {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+.game-root .combo-tag.hot {
+  color: #ffd27a;
+  text-shadow: 0 0 14px rgba(255, 210, 122, 0.55);
+}
+.game-root .question-panel {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 92vw);
+  padding: 18px 22px 16px;
+  animation: rise-in 0.28s ease both;
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+.game-root .question-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.game-root .question-count {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.game-root .question-count i {
+  font-style: normal;
+  color: var(--dim);
+  font-weight: 400;
+}
+.game-root .q-type {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--dim);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+.game-root .penalty-tag {
+  font-size: 11.5px;
+  color: var(--red);
+}
+.game-root .skill-tag {
+  font-size: 11.5px;
+  color: var(--gold);
+}
+.game-root .head-spacer {
+  flex: 1;
+}
+.game-root .question-prompt {
+  font-size: 16.5px;
+  line-height: 1.65;
+  margin: 4px 0 14px;
+  color: var(--text);
+}
+.game-root .choice-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+.game-root .choice-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 11px 13px;
+  cursor: pointer;
+  transition: border-color 0.14s, background 0.14s, transform 0.12s;
+}
+.game-root .choice-item:hover:not(:disabled) {
+  border-color: rgba(216, 179, 106, 0.55);
+  background: var(--gold-soft);
+  transform: translateY(-1px);
+}
+.game-root .choice-item:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.game-root .choice-key {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  font-size: 11.5px;
+  color: var(--muted);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+}
+.game-root .choice-item:hover:not(:disabled) .choice-key {
+  color: var(--gold);
+  border-color: rgba(216, 179, 106, 0.5);
+}
+.game-root .ordering {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.game-root .order-slots {
+  min-height: 46px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+  padding: 8px;
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  border-radius: 9px;
+}
+.game-root .order-hint {
+  font-size: 12.5px;
+  color: var(--dim);
+  padding-left: 4px;
+}
+.game-root .order-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  border-radius: 8px;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: border-color 0.14s, background 0.14s;
+}
+.game-root .order-chip i {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 700;
+}
+.game-root .order-chip.placed {
+  border-color: rgba(87, 200, 180, 0.45);
+  background: var(--teal-soft);
+}
+.game-root .order-chip:hover:not(:disabled) {
+  border-color: rgba(216, 179, 106, 0.6);
+}
+.game-root .order-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.game-root .open-input {
+  display: flex;
+  gap: 10px;
+}
+.game-root .open-input input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.game-root .open-input input:focus {
+  border-color: rgba(216, 179, 106, 0.55);
+}
+.game-root .hint-box {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--teal);
+  background: var(--teal-soft);
+  border: 1px solid rgba(87, 200, 180, 0.25);
+  border-radius: 8px;
+  padding: 9px 12px;
+  line-height: 1.6;
+}
+.game-root .hint-box b {
+  margin-right: 6px;
+  letter-spacing: 0.1em;
+}
+.game-root .question-foot {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+  gap: 12px;
+}
+.game-root .skill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: var(--dim);
+}
+.game-root .skill-btn.ready {
+  color: var(--gold);
+  border-color: rgba(216, 179, 106, 0.6);
+  background: var(--gold-soft);
+  animation: skill-glow 1.4s ease-in-out infinite;
+}
+.game-root .skill-btn.armed {
+  color: #ffd27a;
+  border-color: var(--gold);
+}
+@keyframes skill-glow {
+  50% {
+    box-shadow: 0 0 16px rgba(216, 179, 106, 0.35);
+  }
+}
+.game-root .skill-pips {
+  display: inline-flex;
+  gap: 4px;
+}
+.game-root .skill-pips i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+}
+.game-root .skill-pips i.on {
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(216, 179, 106, 0.8);
+}
+.game-root .foot-note {
+  margin-left: auto;
+  font-size: 11.5px;
+  color: var(--dim);
+}
+.game-root .explain-drawer {
+  margin-top: 14px;
+  border-top: 1px solid var(--panel-border);
+  padding-top: 13px;
+  animation: rise-soft 0.25s ease both;
+}
+@keyframes rise-soft {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.game-root .explain-title {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+.game-root .explain-expected {
+  font-size: 13.5px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.game-root .explain-body {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.game-root .correct-flash {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--teal);
+  animation: rise-soft 0.2s ease both;
+}
+/* ── 结算 ─────────────────────────────────────────────── */
+.game-root .result-backdrop {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(4, 6, 12, 0.55);
+  animation: landing-in 0.4s ease both;
+}
+.game-root .result-panel {
+  width: min(560px, 92vw);
+  padding: 34px 38px 30px;
+  text-align: center;
+}
+.game-root .result-title {
+  font-family: var(--font-display);
+  font-size: 46px;
+  letter-spacing: 0.18em;
+  margin: 0 0 6px;
+}
+.game-root .is-victory .result-title {
+  color: var(--gold);
+  text-shadow: 0 4px 34px rgba(216, 179, 106, 0.35);
+}
+.game-root .is-defeat .result-title {
+  color: var(--red);
+  font-size: 38px;
+}
+.game-root .result-sub {
+  color: var(--muted);
+  font-size: 13.5px;
+  margin: 0 0 24px;
+  letter-spacing: 0.06em;
+}
+.game-root .result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.game-root .stat {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  padding: 12px 8px;
+}
+.game-root .stat em {
+  display: block;
+  font-style: normal;
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.14em;
+  margin-bottom: 5px;
+}
+.game-root .stat b {
+  font-size: 17px;
+  color: var(--text);
+}
+.game-root .stat-xp {
+  color: var(--gold) !important;
+}
+.game-root .defeat-note {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 16px;
+}
+.game-root .result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+/* ── 开发菜单 ─────────────────────────────────────────── */
+.game-root .dev-fab {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(141, 122, 224, 0.5);
+  background: rgba(20, 16, 40, 0.85);
+  color: var(--violet);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  z-index: 60;
+}
+.game-root .dev-fab:hover {
+  border-color: var(--violet);
+}
+.game-root .dev-panel {
+  position: absolute;
+  right: 20px;
+  bottom: 78px;
+  width: 264px;
+  padding: 16px;
+  z-index: 60;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+}
+.game-root .dev-title {
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  color: var(--violet);
+  margin-bottom: 12px;
+}
+.game-root .dev-group {
+  margin-bottom: 13px;
+}
+.game-root .dev-label {
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+}
+.game-root .dev-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.game-root .dev-btn {
+  flex: 1;
+  font-size: 12px;
+  font-family: var(--font-body);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  border-radius: 7px;
+  padding: 7px 8px;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+.game-root .dev-btn:hover:not(:disabled) {
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.game-root .dev-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.game-root .dev-btn.on {
+  color: var(--violet);
+  border-color: rgba(141, 122, 224, 0.6);
+  background: rgba(141, 122, 224, 0.12);
+}
+.game-root .dev-btn.danger-armed {
+  color: var(--red);
+  border-color: rgba(224, 106, 85, 0.6);
+  background: var(--red-soft);
+}
+/* ── JSON 弹窗 / Toast ────────────────────────────────── */
+.game-root .modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 6, 12, 0.66);
+  display: grid;
+  place-items: center;
+  z-index: 70;
+}
+.game-root .json-modal {
+  width: min(760px, 92vw);
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px;
+}
+.game-root .json-modal .panel-head {
+  margin-bottom: 10px;
+}
+.game-root .json-modal .panel-head div {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.game-root .json-body {
+  margin: 0;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #b8c2d8;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 14px;
+  white-space: pre-wrap;
+}
+.game-root .toast {
+  position: absolute;
+  bottom: 88px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 14, 26, 0.92);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  font-size: 13px;
+  border-radius: 999px;
+  padding: 9px 20px;
+  z-index: 80;
+  animation: toast-in 0.25s ease both;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+.game-root .boot-error {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  text-align: center;
+}
+.game-root .boot-error pre {
+  max-width: 640px;
+  white-space: pre-wrap;
+  color: var(--red);
+  font-size: 13px;
+  text-align: left;
+}
+/* 窄屏（非优先，保底可用） */
+@media (max-width: 900px) {
+.game-root .landing-title {
+    font-size: 40px;
+  }
+.game-root .choice-list {
+    grid-template-columns: 1fr;
+  }
+.game-root .result-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+.game-root .level-panel {
+    right: 12px;
+    left: 12px;
+    width: auto;
+    top: auto;
+    bottom: 12px;
+    transform: none;
+  }
+}

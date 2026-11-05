@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chapter Learning Agent · 教材章节 → 学习方案 + 练习 + 游戏世界</title>
+<meta name="description" content="Mimo v2.6 Pro API + Tool Calling Agent：把任意教材章节自动转化为高质量学习方案、练习题库与游戏世界。基于 7 条学习心理学原则设计。" />
+<style>
+  :root {
+    --bg: #0a0d17;
+    --bg2: #0f1424;
+    --panel: rgba(20, 26, 44, 0.72);
+    --border: rgba(255, 255, 255, 0.09);
+    --text: #e9e7df;
+    --dim: #9aa3b8;
+    --gold: #d8b36a;
+    --gold-soft: rgba(216, 179, 106, 0.14);
+    --blue: #4f8ff7;
+    --blue-soft: rgba(79, 143, 247, 0.12);
+    --green: #3fb950;
+    --violet: #bc8cff;
+    --violet-soft: rgba(188, 140, 255, 0.12);
+    --font: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body {
+    background:
+      radial-gradient(1200px 600px at 15% -5%, rgba(79, 143, 247, 0.14), transparent 60%),
+      radial-gradient(1100px 560px at 90% 0%, rgba(216, 179, 106, 0.12), transparent 55%),
+      radial-gradient(900px 700px at 50% 110%, rgba(188, 140, 255, 0.10), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.65;
+    overflow-x: clip;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 96px 0 56px; text-align: center; position: relative; overflow: clip; }
+  .hero .orb {
+    position: absolute; width: 460px; height: 460px; border-radius: 50%;
+    filter: blur(90px); opacity: 0.5; pointer-events: none;
+    animation: drift 14s ease-in-out infinite alternate;
+  }
+  .orb.a { background: radial-gradient(circle, rgba(79,143,247,.5), transparent 65%); top: -140px; left: -120px; }
+  .orb.b { background: radial-gradient(circle, rgba(216,179,106,.45), transparent 65%); top: -100px; right: -140px; animation-delay: -7s; }
+  @keyframes drift { from { transform: translateY(-20px); } to { transform: translateY(24px); } }
+  .overline {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12.5px; letter-spacing: 3px; color: var(--gold);
+    border: 1px solid rgba(216,179,106,.35); border-radius: 99px;
+    padding: 6px 16px; background: var(--gold-soft);
+    animation: rise .7s ease both;
+  }
+  .hero h1 {
+    margin: 26px 0 14px; font-size: clamp(34px, 5.4vw, 62px); font-weight: 800;
+    letter-spacing: 1px; line-height: 1.18;
+    animation: rise .7s .08s ease both;
+  }
+  .hero h1 .grad {
+    background: linear-gradient(92deg, var(--gold) 0%, #f0d9a2 30%, var(--blue) 70%, var(--violet) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero .sub {
+    color: var(--dim); font-size: clamp(18px, 2vw, 20px); max-width: 760px; margin: 0 auto;
+    animation: rise .7s .16s ease both;
+  }
+  .hero .chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 26px; animation: rise .7s .24s ease both; }
+  .chip {
+    font-size: 14px; color: var(--text); border: 1px solid var(--border);
+    background: var(--panel); border-radius: 99px; padding: 7px 15px;
+    backdrop-filter: blur(6px);
+  }
+  .chip b { color: var(--gold); font-weight: 600; }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- stats ---------- */
+  .stats {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+    margin: 44px 0 0; animation: rise .7s .3s ease both;
+  }
+  .stat {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px 10px; text-align: center; backdrop-filter: blur(8px);
+    transition: transform .25s ease, border-color .25s ease;
+  }
+  .stat:hover { transform: translateY(-4px); border-color: rgba(216,179,106,.4); }
+  .stat b { display: block; font-size: 26px; color: var(--gold); }
+  .stat > span { font-size: 14px; color: var(--dim); }
+
+  /* ---------- sections ---------- */
+  section { padding: 72px 0; }
+  .sec-head { text-align: center; margin-bottom: 34px; }
+  .sec-head .kicker { font-size: 12.5px; letter-spacing: 3px; color: var(--blue); text-transform: uppercase; }
+  .sec-head h2 { font-size: clamp(24px, 3.4vw, 34px); margin-top: 10px; font-weight: 750; }
+  .sec-head p { color: var(--dim); max-width: 720px; margin: 10px auto 0; font-size: 17px; }
+
+  /* ---------- pipeline (text flow) ---------- */
+  .pipeline {
+    display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 8px;
+  }
+  .pipe {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px 8px; text-align: center; position: relative;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .pipe:hover { border-color: var(--blue); transform: translateY(-3px); }
+  .pipe em { display: block; font-style: normal; font-size: 9.5px; color: var(--dim); letter-spacing: 0.5px; white-space: nowrap; }
+  .pipe b { font-size: 17px; white-space: nowrap; }
+  .pipe.gold b { color: var(--gold); }
+  .arrow { align-self: center; color: var(--dim); font-size: 16px; opacity: .7; flex: 0 0 auto; }
+
+  /* ---------- diagram frame ---------- */
+  .diagram-frame {
+    border: 1px solid var(--border); border-radius: 18px; overflow: hidden;
+    background: #0d1120; box-shadow: 0 30px 80px rgba(0,0,0,.45);
+  }
+  .diagram-frame .frame-bar {
+    display: flex; align-items: center; gap: 8px; padding: 11px 16px;
+    background: rgba(255,255,255,.03); border-bottom: 1px solid var(--border);
+    font-size: 12.5px; color: var(--dim);
+  }
+  .dot3 { display: inline-flex; gap: 5px; }
+  .dot3 i { width: 10px; height: 10px; border-radius: 50%; background: #2c3550; }
+  .diagram-frame iframe { display: block; width: 100%; height: min(78vh, 860px); border: 0; background: #0b0e1a; }
+
+  /* ---------- principles ---------- */
+  .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; }
+  .pcard {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 16px;
+    padding: 22px 22px 20px; position: relative; overflow: hidden;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .pcard::before {
+    content: ''; position: absolute; inset: 0 auto 0 0; width: 3px;
+    background: linear-gradient(180deg, var(--gold), var(--blue));
+    opacity: 0; transition: opacity .3s ease;
+  }
+  .pcard:hover { transform: translateY(-5px); border-color: rgba(216,179,106,.4); box-shadow: 0 18px 44px rgba(0,0,0,.35); }
+  .pcard:hover::before { opacity: 1; }
+  .pcard .num {
+    position: absolute; top: 12px; right: 16px; font-size: 44px; font-weight: 800;
+    color: rgba(255,255,255,.05); font-family: Georgia, serif;
+  }
+  .pcard h3 { font-size: 22px; margin-bottom: 3px; }
+  .pcard .en { font-size: 11px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
+  .pcard ul { margin-top: 12px; padding-left: 0; list-style: none; }
+  .pcard li {
+    font-size: 17px; color: var(--dim); padding: 5px 0 5px 20px; position: relative;
+  }
+  .pcard li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .pcard .where {
+    margin-top: 12px; font-size: 12px; color: var(--violet);
+    background: var(--violet-soft); border-radius: 8px; padding: 6px 10px; display: inline-block;
+  }
+
+  /* ---------- dual loops / assurance ---------- */
+  .loops { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+  .loop {
+    border: 1px solid var(--border); border-radius: 16px; padding: 24px;
+    background: linear-gradient(160deg, rgba(79,143,247,.07), rgba(20,26,44,.4));
+  }
+  .loop.v { background: linear-gradient(160deg, rgba(188,140,255,.07), rgba(20,26,44,.4)); }
+  .loop.g { background: linear-gradient(160deg, rgba(63,185,80,.07), rgba(20,26,44,.4)); }
+  .loop h3 { font-size: 22px; margin-bottom: 10px; }
+  .loop p { font-size: 17px; color: var(--dim); }
+  .loop .tag { font-size: 11.5px; color: var(--blue); letter-spacing: 1px; }
+
+  /* ---------- CTA ---------- */
+  .cta { text-align: center; padding: 84px 0 60px; position: relative; }
+  .cta h2 { font-size: clamp(24px, 3.4vw, 36px); margin-bottom: 12px; }
+  .cta p { color: var(--dim); margin-bottom: 34px; }
+  .enter-btn {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-size: 19px; font-weight: 700; color: #141003;
+    background: linear-gradient(94deg, var(--gold), #f0d9a2 55%, var(--gold));
+    border: none; border-radius: 99px; padding: 18px 46px; cursor: pointer;
+    text-decoration: none; letter-spacing: 1px;
+    box-shadow: 0 14px 44px rgba(216, 179, 106, 0.35), inset 0 1px 0 rgba(255,255,255,.5);
+    transition: transform .25s ease, box-shadow .25s ease;
+    animation: glow 2.6s ease-in-out infinite;
+  }
+  .enter-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 60px rgba(216,179,106,.5); }
+  .enter-btn .arr { transition: transform .25s ease; }
+  .enter-btn:hover .arr { transform: translateX(6px); }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 14px 44px rgba(216,179,106,.32); }
+    50% { box-shadow: 0 14px 58px rgba(216,179,106,.55); }
+  }
+  .cta .alt { display: block; margin-top: 18px; font-size: 12.5px; color: var(--dim); }
+  .cta .alt a { color: var(--blue); text-decoration: none; }
+
+  footer { border-top: 1px solid var(--border); padding: 26px 0 34px; text-align: center; color: var(--dim); font-size: 12.5px; }
+  footer .sep { margin: 0 10px; opacity: .4; }
+
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding-top: 64px; }
+  }
+
+  /* ---------- 内联架构图 ---------- */
+  .arch-wrap { padding: 20px 4px; overflow-x: auto; }
+  .arch { width: 100%; min-width: 1040px; height: auto; display: block; }
+  .arch .node { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; cursor: default; }
+  .arch.in .node { opacity: 1; transform: translateY(0); }
+  .arch .node:hover .nbody { filter: drop-shadow(0 0 14px rgba(216, 179, 106, .4)); stroke: #ffd88a; }
+  .arch .node:hover .nname { fill: #ffd88a; }
+  .arch .conn { opacity: 0; transition: opacity .9s ease .95s; }
+  .arch.in .conn { opacity: 1; }
+  .arch .conn .lbl { opacity: 0; transition: opacity .7s ease 1.25s; }
+  .arch.in .conn .lbl { opacity: 1; }
+  .flow { stroke-dasharray: 7 9; animation: dashmove 1.15s linear infinite; }
+  @keyframes dashmove { to { stroke-dashoffset: -32; } }
+  .pulseRing { animation: pring 2.4s ease-out infinite; }
+  @keyframes pring { 0% { opacity: .75; } 70% { opacity: .12; } 100% { opacity: .75; } }
+  .qaGlow { animation: qglow 2.8s ease-in-out infinite; }
+  @keyframes qglow { 0%,100% { opacity: .12; } 50% { opacity: .42; } }
+  .legend text { font-size: 12px; fill: #9aa3b8; font-family: var(--font); }
+
+  /* ---------- 背景特效层 ---------- */
+  #bgfx { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+  .glyph-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .glyph {
+    position: absolute; bottom: -60px; font-family: Georgia, 'Times New Roman', serif;
+    color: rgba(216, 179, 106, 0.10); user-select: none;
+    animation: floatUp linear infinite;
+  }
+  .glyph.blue { color: rgba(79, 143, 247, 0.10); }
+  .glyph.violet { color: rgba(188, 140, 255, 0.09); }
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    8% { opacity: 1; }
+    90% { opacity: .8; }
+    100% { transform: translateY(-110vh) rotate(24deg); opacity: 0; }
+  }
+  .dotgrid {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(154, 163, 184, 0.10) 1px, transparent 1.4px);
+    background-size: 34px 34px;
+    animation: gridpan 60s linear infinite;
+    opacity: .5;
+  }
+  @keyframes gridpan { to { background-position: 340px 340px; } }
+  .wrap, header.hero, section, footer, .cta { position: relative; z-index: 1; }
+
+  /* ---------- 标题流光 ---------- */
+  .hero h1 .grad {
+    background-size: 220% 100%;
+    animation: shimmer 6.5s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* ---------- CTA 扫光 ---------- */
+  .enter-btn { position: relative; overflow: hidden; }
+  .enter-btn::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 60px;
+    background: linear-gradient(105deg, transparent, rgba(255,255,255,.75), transparent);
+    left: -80px; transform: skewX(-20deg);
+    animation: sheen 3.2s ease-in-out infinite;
+  }
+  @keyframes sheen { 0%, 55% { left: -80px; } 75%, 100% { left: 120%; } }
+
+  /* ---------- 分区渐变分隔线 ---------- */
+  .sec-line {
+    height: 1px; border: 0; margin: 0 auto 40px; max-width: 1180px;
+    background: linear-gradient(90deg, transparent, rgba(216,179,106,.5), rgba(79,143,247,.5), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 7s linear infinite;
+  }
+
+  .stat b span { font-size: inherit; color: inherit; }
+  .enter-btn:focus-visible { outline: 3px solid var(--text); outline-offset: 6px; }
+  .arch-wrap:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }
+  @media (max-width: 1080px) {
+    .pipeline { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  }
+  @media (max-width: 720px) {
+    .wrap { padding: 0 20px; }
+  }
+  @media (max-width: 480px) {
+    .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pipe:last-child, .stat:last-child { grid-column: 1 / -1; }
+  }
+  /* 流动光边：只绘制边缘，保留原有背景、文字和动画。 */
+  @property --edge-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  :is(.chip, .stat, .pipe, .pcard, .loop, .diagram-frame, .enter-btn) {
+    --edge-rgb: 216, 179, 106;
+    --edge-width: 1px;
+    --edge-duration: 12s;
+    --edge-phase: 0s;
+    position: relative;
+    isolation: isolate;
+    border-color: rgba(var(--edge-rgb), .25);
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  :is(.stat, .pipe, .pcard, .loop):nth-child(even) {
+    --edge-rgb: 79, 143, 247;
+    --edge-phase: -4s;
+  }
+  :is(.stat, .pipe, .pcard, .loop):nth-child(3n) {
+    --edge-phase: -8s;
+  }
+  .loop.v { --edge-rgb: 188, 140, 255; }
+  .loop.g { --edge-rgb: 63, 185, 80; }
+  .diagram-frame { --edge-width: 2px; --edge-duration: 18s; }
+  .chip { --edge-duration: 16s; }
+  :is(.stat, .pipe, .pcard, .loop) {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04), 0 8px 24px rgba(0, 0, 0, .16);
+  }
+  :is(.chip, .stat, .pipe, .pcard, .loop, .diagram-frame):hover {
+    border-color: rgba(var(--edge-rgb), .55);
+    box-shadow: 0 0 26px rgba(var(--edge-rgb), .16), 0 18px 44px rgba(0, 0, 0, .32), inset 0 1px 0 rgba(255, 255, 255, .08);
+  }
+  :is(.stat, .pipe, .pcard, .loop, .diagram-frame)::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 0%, rgba(var(--edge-rgb), .14), transparent 65%);
+    opacity: .3;
+    transition: opacity .4s ease;
+  }
+  :is(.stat, .pipe, .pcard, .loop, .diagram-frame):hover::after { opacity: 1; }
+  @supports (mask-composite: exclude) or (-webkit-mask-composite: xor) {
+    :is(.chip, .stat, .pipe, .pcard, .loop, .diagram-frame, .enter-btn)::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: auto;
+      height: auto;
+      padding: var(--edge-width);
+      border-radius: inherit;
+      pointer-events: none;
+      background: conic-gradient(from var(--edge-angle),
+        transparent 0deg 55deg,
+        rgba(var(--edge-rgb), .25) 85deg,
+        rgba(var(--edge-rgb), .95) 108deg,
+        rgba(248, 240, 216, .95) 116deg,
+        rgba(79, 143, 247, .8) 135deg,
+        transparent 168deg 235deg,
+        rgba(188, 140, 255, .55) 278deg,
+        transparent 325deg);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: .75;
+      animation: edge-orbit var(--edge-duration) linear infinite;
+      animation-delay: var(--edge-phase);
+      transition: opacity .3s ease;
+    }
+    :is(.chip, .stat, .pipe, .pcard, .loop, .diagram-frame):hover::before { opacity: 1; }
+    .enter-btn::before {
+      --edge-width: 2px;
+      --edge-duration: 6s;
+      background: conic-gradient(from var(--edge-angle), transparent 0deg 90deg, #fff5d5 120deg, #fff 150deg, transparent 180deg 270deg, #fff5d5 300deg, transparent 345deg);
+      opacity: .95;
+    }
+  }
+  @keyframes edge-orbit { to { --edge-angle: 360deg; } }
+  @media (prefers-reduced-motion: reduce) {
+    :is(.chip, .stat, .pipe, .pcard, .loop, .diagram-frame, .enter-btn)::before { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bgfx"></canvas>
+<div class="dotgrid"></div>
+<div class="glyph-layer" id="glyphs"></div>
+
+<header class="hero">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <h1>Chapter <span class="grad">Learning Agent</span></h1>
+    <p class="sub">
+      把任意教材章节，变成一份高质量的学习方案、一套带答案解析的练习题库、
+      一个可玩的游戏世界——全程由 Mimo v2.6 Pro 驱动的智能体自主完成：
+      定位章节 → 完整阅读 → 章节理解 → 方案设计 → 出题 → 心理学 QA → 独立验证。
+    </p>
+    <div class="chips">
+      <span class="chip"><b>8</b> 个 Agent 工具</span>
+      <span class="chip"><b>10</b> 阶段固定状态机</span>
+      <span class="chip"><b>7</b> 条学习心理学原则</span>
+      <span class="chip"><b>3</b> 层防幻觉硬闸门</span>
+      <span class="chip"><b>2</b> 质检循环</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b class="cnt" data-to="18">0</b><span>生成练习题（含答案解析）</span></div>
+      <div class="stat"><b class="cnt" data-to="68">0</b><span>步 Agent 真实工作日志</span></div>
+      <div class="stat"><b class="cnt" data-to="100" data-suffix="%">0%</b><span>章节阅读覆盖率（强制）</span></div>
+      <div class="stat"><b><span class="cnt" data-to="7">0</span>/7</b><span>心理学原则 QA 通过</span></div>
+      <div class="stat"><b class="cnt" data-to="100" data-suffix="%">0%</b><span>产物带教材页码溯源</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>一条流水线，两种玩法</h2>
+      <p>教师放入教材，智能体完成剩下的一切；学生在网页里学习，或走进由本章知识生成的游戏世界。</p>
+    </div>
+    <div class="pipeline reveal">
+      <div class="pipe gold"><b>教材章节</b></div>
+      <div class="pipe"><b>定位章节</b></div>
+      <div class="pipe"><b>完整阅读</b></div>
+      <div class="pipe"><b>章节理解</b></div>
+      <div class="pipe"><b>方案设计</b></div>
+      <div class="pipe"><b>生成练习</b></div>
+      <div class="pipe"><b>7 原则检查</b></div>
+      <div class="pipe"><b>独立验证</b></div>
+      <div class="pipe gold"><b>学习 / 游戏</b></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>系统架构全景</h2>
+      <p>从教材解析到学习与游戏，查看各环节如何连接。</p>
+    </div>
+    <div class="diagram-frame reveal">
+      <div class="frame-bar">
+        <span class="dot3"><i></i><i></i><i></i></span>
+      </div>
+      <div class="arch-wrap" tabindex="0" role="region" aria-label="系统架构图，可横向滚动">
+      <svg class="arch" id="archSvg" viewBox="0 0 1360 780" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="系统架构图">
+        <defs>
+          <linearGradient id="gBe" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#152238"/><stop offset="1" stop-color="#0f1828"/>
+          </linearGradient>
+          <linearGradient id="gCloud" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a2140"/><stop offset="1" stop-color="#1a1530"/>
+          </linearGradient>
+          <linearGradient id="gDb" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#231d3d"/><stop offset="1" stop-color="#171230"/>
+          </linearGradient>
+          <linearGradient id="gFe" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#12281c"/><stop offset="1" stop-color="#0d1c15"/>
+          </linearGradient>
+          <linearGradient id="gExt" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1c2536"/><stop offset="1" stop-color="#151c2b"/>
+          </linearGradient>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#8fa0bf"/>
+          </marker>
+          <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#ffd88a"/>
+          </marker>
+        </defs>
+
+        <!-- ═══ 连线层 ═══ -->
+        <g class="conn">
+          <path id="pth_teachers" d="M 300 122 L 382 122" stroke="#4c5a78" stroke-width="1.8" marker-end="url(#arrow)"/>
+          <path id="pth_parsers" d="M 650 122 L 732 122" stroke="#4c5a78" stroke-width="1.8" marker-end="url(#arrow)"/>
+          <path id="pth_tools" d="M 1000 122 L 1082 122" stroke="#d8b36a" stroke-width="2" class="flow" marker-end="url(#arrowGold)"/>
+          <path id="pth_ctrl_ds" d="M 870 314 C 870 246, 1220 262, 1220 192" stroke="#d8b36a" stroke-width="2" class="flow" fill="none" marker-end="url(#arrowGold)"/>
+          <path id="pth_ctrl_qa" d="M 1000 382 L 1082 382" stroke="#bc8cff" stroke-width="2" class="flow" marker-end="url(#arrow)"/>
+          <path id="pth_ctrl_verify" d="M 740 382 L 662 382" stroke="#4c5a78" stroke-width="1.8" marker-end="url(#arrow)"/>
+          <path id="pth_verify_art" d="M 390 382 L 312 382" stroke="#4c5a78" stroke-width="1.8" stroke-dasharray="6 7" marker-end="url(#arrow)"/>
+          <path id="pth_art_web" d="M 175 444 C 175 522, 520 500, 520 572" stroke="#3fb950" stroke-width="2" class="flow" fill="none" marker-end="url(#arrow)"/>
+          <path id="pth_web_game" d="M 650 642 L 732 642" stroke="#4c5a78" stroke-width="1.8" marker-end="url(#arrow)"/>
+          <path id="pth_student" d="M 300 642 L 382 642" stroke="#4c5a78" stroke-width="1.8" marker-end="url(#arrow)"/>
+          <!-- 数据粒子 -->
+          <circle r="3.4" fill="#ffd88a"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#pth_ctrl_ds"/></animateMotion></circle>
+          <circle r="3.4" fill="#d8b36a"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#pth_tools"/></animateMotion></circle>
+          <circle r="3.4" fill="#bc8cff"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#pth_ctrl_qa"/></animateMotion></circle>
+          <circle r="3.4" fill="#7ee2a8"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#pth_art_web"/></animateMotion></circle>
+          <circle r="3" fill="#8fa0bf"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#pth_student"/></animateMotion></circle>
+        </g>
+
+        <!-- ═══ 节点层 ═══ -->
+        <g class="nodes">
+          <!-- Row 0 -->
+          <g class="node" style="transition-delay:.05s">
+            <rect class="nbody" x="40" y="60" width="260" height="124" rx="14" fill="url(#gExt)" stroke="#7c8aa5" stroke-width="1.4"/>
+            <text x="170" y="102" text-anchor="middle" font-size="22">📚</text>
+            <text class="nname" x="170" y="142" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">教师 · 提供教材</text>
+                      </g>
+          <g class="node" style="transition-delay:.12s">
+            <rect class="nbody" x="390" y="60" width="260" height="124" rx="14" fill="url(#gBe)" stroke="#57a4f7" stroke-width="1.4"/>
+            <text x="520" y="102" text-anchor="middle" font-size="22">📄</text>
+            <text class="nname" x="520" y="142" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">文档解析层</text>
+                                  </g>
+          <g class="node" style="transition-delay:.19s">
+            <rect class="nbody" x="740" y="60" width="260" height="124" rx="14" fill="url(#gBe)" stroke="#57a4f7" stroke-width="1.4"/>
+            <text x="870" y="102" text-anchor="middle" font-size="22">🛠️</text>
+            <text class="nname" x="870" y="142" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">Agent 工具层 ×8</text>
+                                  </g>
+          <g class="node" style="transition-delay:.26s">
+            <rect class="nbody" x="1090" y="60" width="260" height="124" rx="14" fill="url(#gCloud)" stroke="#d8b36a" stroke-width="1.6"/>
+            <text x="1220" y="102" text-anchor="middle" font-size="22">🧠</text>
+            <text class="nname" x="1220" y="142" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">Mimo v2.6 Pro API</text>
+                                  </g>
+
+          <!-- Row 1 -->
+          <g class="node" style="transition-delay:.33s">
+            <rect class="nbody" x="40" y="320" width="260" height="124" rx="14" fill="url(#gDb)" stroke="#bc8cff" stroke-width="1.4"/>
+            <text x="170" y="362" text-anchor="middle" font-size="22">🗂️</text>
+            <text class="nname" x="170" y="402" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">章节产物 · 溯源</text>
+                                  </g>
+          <g class="node" style="transition-delay:.40s">
+            <rect class="nbody" x="390" y="320" width="260" height="124" rx="14" fill="url(#gBe)" stroke="#57a4f7" stroke-width="1.4"/>
+            <text x="520" y="362" text-anchor="middle" font-size="22">🔍</text>
+            <text class="nname" x="520" y="402" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">独立验证员</text>
+                                  </g>
+          <g class="node" style="transition-delay:.47s">
+            <rect class="pulseRing" x="732" y="312" width="276" height="140" rx="18" fill="none" stroke="#d8b36a" stroke-width="1.6" stroke-dasharray="10 8"/>
+            <rect class="nbody" x="740" y="320" width="260" height="124" rx="14" fill="url(#gBe)" stroke="#d8b36a" stroke-width="1.6"/>
+            <text x="870" y="362" text-anchor="middle" font-size="22">⚙️</text>
+            <text class="nname" x="870" y="402" text-anchor="middle" font-size="22" font-weight="700" fill="#ffd88a" font-family="var(--font)">状态机控制器</text>
+                                  </g>
+          <g class="node" style="transition-delay:.54s">
+            <rect class="qaGlow" x="1082" y="312" width="276" height="140" rx="18" fill="#bc8cff" stroke="none"/>
+            <rect class="nbody" x="1090" y="320" width="260" height="124" rx="14" fill="url(#gBe)" stroke="#bc8cff" stroke-width="1.4"/>
+            <text x="1220" y="362" text-anchor="middle" font-size="22">🧪</text>
+            <text class="nname" x="1220" y="402" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">心理学 QA · 7 原则</text>
+                                  </g>
+
+          <!-- Row 2 -->
+          <g class="node" style="transition-delay:.61s">
+            <rect class="nbody" x="40" y="580" width="260" height="124" rx="14" fill="url(#gExt)" stroke="#7c8aa5" stroke-width="1.4"/>
+            <text x="170" y="622" text-anchor="middle" font-size="22">🎓</text>
+            <text class="nname" x="170" y="662" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">学生</text>
+                      </g>
+          <g class="node" style="transition-delay:.68s">
+            <rect class="nbody" x="390" y="580" width="260" height="124" rx="14" fill="url(#gFe)" stroke="#3fb950" stroke-width="1.4"/>
+            <text x="520" y="622" text-anchor="middle" font-size="22">📖</text>
+            <text class="nname" x="520" y="662" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">Web 学习端</text>
+                                  </g>
+          <g class="node" style="transition-delay:.75s">
+            <rect class="nbody" x="740" y="580" width="260" height="124" rx="14" fill="url(#gFe)" stroke="#3fb950" stroke-width="1.4"/>
+            <text x="870" y="622" text-anchor="middle" font-size="22">🎮</text>
+            <text class="nname" x="870" y="662" text-anchor="middle" font-size="22" font-weight="700" fill="#e9e7df" font-family="var(--font)">游戏模式 · Phaser</text>
+                                  </g>
+        </g>
+
+      </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>7 条学习游戏心理学原则 · 逐条落地</h2>
+      <p>不是口号——每一条原则都对应系统里一个可检验的机制，并由 Agent 的独立 QA 阶段逐条审查、不通过即自动修订。</p>
+    </div>
+    <div class="principles">
+      <div class="pcard reveal">
+        <span class="num">01</span>
+        <h3>目标明确</h3>
+        <ul>
+          <li>每个学习阶段开场先展示「本阶段目标」——可检验的行为，不是形容词</li>
+          <li>通关面板展示本关学习目标与通关奖励</li>
+        </ul>
+      </div>
+      <div class="pcard reveal">
+        <span class="num">02</span>
+        <h3>即时反馈</h3>
+        <ul>
+          <li>选择题点击即判分：答对绿框+伤害特效，答错红框+正确答案</li>
+          <li>每题解析讲清「为什么」，并附教材页码依据</li>
+        </ul>
+      </div>
+      <div class="pcard reveal">
+        <span class="num">03</span>
+        <h3>真实进度</h3>
+        <ul>
+          <li>掌握标准 = 「能独立证明消去律」这类可验证行为，禁止虚假进度条</li>
+          <li>学习报告只统计真实作答：掌握几题、未掌握几题、错题回顾</li>
+        </ul>
+      </div>
+      <div class="pcard reveal">
+        <span class="num">04</span>
+        <h3>有意义的选择</h3>
+        <ul>
+          <li>阶段开场可选「先学内容」或「跳过内容直接练习」</li>
+          <li>学习路径分支：基础巩固 or 直接挑战，由学生自评决定</li>
+        </ul>
+      </div>
+      <div class="pcard reveal">
+        <span class="num">05</span>
+        <h3>小步成功</h3>
+        <ul>
+          <li>章节拆为多个阶段，每阶段都有明确的完成时刻</li>
+          <li>阶段完成页即时统计「本阶段 X/Y 题掌握」+ 顶部进度条推进</li>
+        </ul>
+      </div>
+      <div class="pcard reveal">
+        <span class="num">06</span>
+        <h3>难度–能力匹配</h3>
+        <ul>
+          <li>题目按基础→中等→挑战渐进排列，敌人血量与题量匹配</li>
+          <li>每个常见失败点都配补救策略（重读哪个定义、做哪个反例）</li>
+        </ul>
+      </div>
+      <div class="pcard reveal">
+        <span class="num">07</span>
+        <h3>认知牵引</h3>
+        <ul>
+          <li>用反直觉反例开场：自然数上的减法「看起来是运算」却因 1−2=−1 不封闭</li>
+          <li>先抛意外结论再引入定义，内容逐条揭示而非一次性灌输</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>为什么它产出的内容可信</h2>
+      <p>教育产品的底线是内容质量。三个机制兜底，每一条都被真实跑通过。</p>
+    </div>
+    <div class="loops">
+      <div class="loop reveal">
+        <h3>教材锚定 · 防幻觉三闸门</h3>
+        <p>Agent 的知识来源被强制限定为用户教材：页码只能来自真实检索结果；章节未 100% 读完不许进入设计阶段；每条定义、定理、题目都必须携带「文件 + 页码」出处，否则被 Schema 校验直接拒绝。</p>
+      </div>
+      <div class="loop v reveal">
+        <h3>心理学原则 · 自动修订</h3>
+        <p>独立的 QA 角色按 7 条原则逐条审查学习方案与题库；任何一条不通过，Agent 必须修改产物并重新复查，最多 3 轮。真实运行中它曾自主发现「掌握标准不可检验」并重写后通过。</p>
+      </div>
+      <div class="loop g reveal">
+        <h3>独立验证 · 逐题重解</h3>
+        <p>最终验证员对每道题独立重新解题，不信任第一次生成的答案。真实运行中它抓到了选项重复缺陷并自动修正，随后进入第二轮复查确认清零——「验证员」与「出题者」角色分离，不护短。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>现在，走进这个由教材生成的学习世界</h2>
+    <p>内置「抽象代数 · 第一章」完整成果：18 道题 · 7 阶段学习方案 · 可玩的游戏地图。打开即可学习与游玩。</p>
+    <a class="enter-btn" href="http://103.117.138.243/" target="_blank" rel="noopener">
+      🎓 进入系统 <span class="arr">→</span>
+    </a>
+  </div>
+</section>
+
+
+<script>
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } })
+  }, { threshold: 0.12 })
+  document.querySelectorAll('.reveal, .arch').forEach((el) => io.observe(el))
+</script>
+
+<script>
+// ---------- 背景星空 + 流星 + 鼠标视差 ----------
+  const cv = document.getElementById('bgfx')
+  const ctx = cv.getContext('2d')
+  let W, H, stars = [], meteors = []
+  const mouse = { x: .5, y: .5, cx: .5, cy: .5 }
+
+  function resize() {
+    W = cv.width = innerWidth * devicePixelRatio
+    H = cv.height = innerHeight * devicePixelRatio
+    cv.style.width = innerWidth + 'px'
+    cv.style.height = innerHeight + 'px'
+  }
+  addEventListener('resize', resize); resize()
+
+  const COLORS = ['233,231,223', '216,179,106', '143,199,247', '188,140,255']
+  for (let i = 0; i < 150; i++) {
+    stars.push({
+      x: Math.random(), y: Math.random(),
+      r: .4 + Math.random() * 1.3,
+      base: .15 + Math.random() * .5,
+      ph: Math.random() * Math.PI * 2,
+      sp: .4 + Math.random() * 1.2,
+      dx: -(0.004 + Math.random() * 0.012),
+      c: COLORS[Math.floor(Math.random() * COLORS.length)],
+    })
+  }
+  function spawnMeteor() {
+    meteors.push({
+      x: Math.random() * .8 + .1, y: -.05,
+      vx: -(0.9 + Math.random() * .7) / 60, vy: (1.4 + Math.random() * .8) / 60,
+      life: 1,
+    })
+    setTimeout(spawnMeteor, 4500 + Math.random() * 7000)
+  }
+  setTimeout(spawnMeteor, 3000)
+
+  addEventListener('pointermove', (e) => {
+    mouse.x = e.clientX / innerWidth
+    mouse.y = e.clientY / innerHeight
+  })
+
+  const orbs = document.querySelectorAll('.orb')
+  function tick(t) {
+    mouse.cx += (mouse.x - mouse.cx) * .04
+    mouse.cy += (mouse.y - mouse.cy) * .04
+    ctx.clearRect(0, 0, W, H)
+    const ox = (mouse.cx - .5) * 26 * devicePixelRatio
+    const oy = (mouse.cy - .5) * 18 * devicePixelRatio
+    for (const s of stars) {
+      s.x += s.dx / innerWidth; if (s.x < -.02) s.x = 1.02
+      const tw = s.base + Math.sin(t / 900 * s.sp + s.ph) * .22
+      const px = (s.x * innerWidth + ox * (s.r / 1.7)) * devicePixelRatio
+      const py = (s.y * innerHeight + oy * (s.r / 1.7)) * devicePixelRatio
+      ctx.beginPath()
+      ctx.fillStyle = 'rgba(' + s.c + ',' + Math.max(0, tw) + ')'
+      ctx.arc(px, py, s.r * devicePixelRatio, 0, 6.283)
+      ctx.fill()
+    }
+    // 流星
+    for (let i = meteors.length - 1; i >= 0; i--) {
+      const m = meteors[i]
+      m.x += m.vx; m.y += m.vy; m.life -= .012
+      if (m.life <= 0 || m.y > 1.1) { meteors.splice(i, 1); continue }
+      const x = m.x * innerWidth * devicePixelRatio, y = m.y * innerHeight * devicePixelRatio
+      const tail = 90 * devicePixelRatio
+      const grad = ctx.createLinearGradient(x, y, x - m.vx * tail * 8, y - m.vy * tail * 8)
+      grad.addColorStop(0, 'rgba(240,217,162,' + (.85 * m.life) + ')')
+      grad.addColorStop(1, 'rgba(240,217,162,0)')
+      ctx.strokeStyle = grad; ctx.lineWidth = 1.6 * devicePixelRatio
+      ctx.beginPath(); ctx.moveTo(x, y)
+      ctx.lineTo(x - m.vx * tail * 8, y - m.vy * tail * 8); ctx.stroke()
+    }
+    // 光斑视差
+    orbs.forEach((o, i) => {
+      const k = i === 0 ? 1 : -1
+      o.style.transform = 'translate(' + (mouse.cx - .5) * 46 * k + 'px,' + (mouse.cy - .5) * 30 * k + 'px)'
+    })
+    requestAnimationFrame(tick)
+  }
+  requestAnimationFrame(tick)
+
+  // ---------- 浮游数学符号 ----------
+  ;(() => {
+    const glyphs = ['∑','π','∞','ƒ','√','Δ','θ','∈','≈','∮','λ','⊕','∀','ℕ','⊂']
+    const layer = document.getElementById('glyphs')
+    for (let i = 0; i < 16; i++) {
+      const el = document.createElement('span')
+      el.className = 'glyph' + (i % 4 === 0 ? ' blue' : i % 4 === 1 ? ' violet' : '')
+      el.textContent = glyphs[i % glyphs.length]
+      el.style.left = (3 + Math.random() * 94) + 'vw'
+      el.style.fontSize = (14 + Math.random() * 20) + 'px'
+      el.style.animationDuration = (22 + Math.random() * 22) + 's'
+      el.style.animationDelay = (-Math.random() * 40) + 's'
+      layer.appendChild(el)
+    }
+  })()
+
+  // ---------- 数字滚动 ----------
+  ;(() => {
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => {
+        if (!e.isIntersecting) return
+        io.unobserve(e.target)
+        const to = +e.target.dataset.to, suf = e.target.dataset.suffix || ''
+        const t0 = performance.now(), dur = 1400
+        ;(function step(t) {
+          const k = Math.min(1, (t - t0) / dur)
+          const ease = 1 - Math.pow(1 - k, 3)
+          e.target.textContent = Math.round(to * ease) + suf
+          if (k < 1) requestAnimationFrame(step)
+        })(t0)
+      })
+    }, { threshold: .5 })
+    document.querySelectorAll('.cnt').forEach((el) => io.observe(el))
+  })()
+</script>
+</body>
+</html>
